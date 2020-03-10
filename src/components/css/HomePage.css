@@ -1,1 +1,48 @@
-/* No CSS *//*# sourceMappingURL=HomePage.css.map */
+.HomePage {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.new-links {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto 1rem;
+}
+
+.new-title,
+.new-collection {
+  text-align: center;
+  background-color: #0afe0a;
+  text-decoration: none;
+  margin: 0 auto;
+  display: block;
+  padding: .5rem;
+  width: 200px;
+}
+
+.new-title {
+  margin-bottom: 1rem;
+}
+
+.filmnumber {
+  margin-bottom: 1rem;
+}
+/*# sourceMappingURL=HomePage.css.map */

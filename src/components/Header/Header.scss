@@ -1,12 +1,18 @@
 .Header {
-  display: flex;
-}
-
-header {
-  margin: 0 auto;
   padding: 2rem;
 }
 
-h1, p {
+h1,
+p {
   text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.homelink {
+  text-decoration: none;
 }

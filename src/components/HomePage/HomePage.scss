@@ -1,0 +1,33 @@
+.HomePage {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+}
+
+.new-title,
+.new-collection {
+  text-align: center;
+  background-color: rgb(10, 254, 10);
+  text-decoration: none;
+  margin: 0 auto;
+  display: block;
+  padding: .5rem;
+  width: 200px;
+}
+
+.new-title {
+  margin-bottom: 1rem;
+}
+
+.filmnumber {
+  margin-bottom: 1rem;
+}

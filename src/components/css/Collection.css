@@ -1,0 +1,13 @@
+.Collection {
+  list-style-type: none;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+}
+
+.collection-link {
+  text-decoration: none;
+  color: black;
+}
+/*# sourceMappingURL=Collection.css.map */

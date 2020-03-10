@@ -4,12 +4,13 @@ import Welcome from '../Welcome/Welcome';
 import HomePage from '../HomePage/HomePage';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
+import AddTitle from '../AddTitle/AddTitle';
 import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 
 export class App extends Component {
   state = {
-    loggedIn: false
+    loggedIn: true
   };
 
   render() {
@@ -18,9 +19,15 @@ export class App extends Component {
         <Header />
         <main className="App-main">
           <Switch>
-            <Route exact path={'/'} component={HomePage} />
+            {this.state.loggedIn ? (
+              <Route exact path={'/'} component={HomePage} />
+            ) : (
+              <Route exact path={'/'} component={Welcome} />
+            )}
             <Route exact path={'/login'} component={Login} />
             <Route exact path={'/register'} component={Register} />
+            <Route exact path={'/add-title'} component={AddTitle} />
+            <Route exact path={'/add-collection'} component={AddTitle} />
           </Switch>
         </main>
       </div>

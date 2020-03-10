@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=Welcome.css.map */
+.Welcome {
+  text-align: center;
+}
+
+button {
+  display: block;
+  padding: 1rem;
+}
+/*# sourceMappingURL=Welcome.css.map */

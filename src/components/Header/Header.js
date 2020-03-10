@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import './Header.scss'
+import { Link } from 'react-router-dom';
+import './Header.scss';
 
 export class Header extends Component {
   render() {
-    return <div className='Header'>
-      <header>
-        <h1>Video Store</h1>
-        <p>Welcome to Video Store! Your personal film collection assistant</p>
-      </header>
-    </div>;
+    return (
+      <div className="Header">
+        <header>
+          <Link to="/" className="homelink">
+            <h1>Video Store</h1>
+          </Link>
+          <p>Welcome to Video Store! Your personal film collection assistant</p>
+        </header>
+      </div>
+    );
   }
 }
 
