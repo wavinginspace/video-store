@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC,CAAC,CAAC;EACZ,MAAM,EAAE,UAAU;EAClB,UAAU,EAAE,IAAI;CACjB",
+    "sources": [
+        "../FilmDetail/FilmDetail.scss"
+    ],
+    "names": [],
+    "file": "FilmDetail.css"
+}

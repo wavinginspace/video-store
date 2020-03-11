@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,eAAe,EAAE,IAAI;EACrB,UAAU,EAAE,MAAM;EAClB,eAAe,EAAE,IAAI;EACrB,aAAa,EAAE,KAAK;EACpB,SAAS,EAAE,MAAM;CAClB;;AAED,AAAA,gBAAgB,CAAC;EACf,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,KAAK;CACb;;AAED,AAAA,gBAAgB,AAAA,MAAM,CACrB;EAAE,KAAK,EAAE,IAAI;CAAE",
+    "sources": [
+        "../CollectionLink/CollectionLink.scss"
+    ],
+    "names": [],
+    "file": "CollectionLink.css"
+}

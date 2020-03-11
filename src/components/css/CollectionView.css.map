@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;CACd;;AAED,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;CACd;;AAED,AAAA,WAAW,CAAC;EACV,aAAa,EAAE,IAAI;CACpB",
+    "sources": [
+        "../CollectionView/CollectionView.scss"
+    ],
+    "names": [],
+    "file": "CollectionView.css"
+}

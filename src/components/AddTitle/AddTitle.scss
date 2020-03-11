@@ -1,9 +1,11 @@
 label {
   display: block;
+  margin: .5rem auto;
 }
 
 input {
   width: 60%;
+  margin: 0 auto 1rem;
 }
 
 form {
@@ -11,12 +13,56 @@ form {
   flex-direction: column;
 }
 
-[select] {
+textarea {
   margin: 0 auto;
+  width: 60%;
+  height: 50px;
+  margin-bottom: 2rem;
 }
 
 #collections {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 1rem;
+}
+
+#format {
+  margin: 0 auto;
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+.sellinginput {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sellingcheckbox {
+  margin: 0 .5rem;
+  display: block;
+  width: 10px;
+}
+
+.sellinglabel {
+  display: inline-block;
+  margin: 0;
+}
+
+.homelink {
+  text-decoration: none;
+  margin: 1rem;
+  color: black;
+}
+
+.homelinkp {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.homelinkp:hover {
+  color: blue;
 }

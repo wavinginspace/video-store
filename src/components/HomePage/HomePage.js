@@ -26,7 +26,7 @@ export class HomePage extends Component {
   render() {
     return (
       <div className="HomePage">
-        <p className="filmnumber">There are {collections.length} collections in your store</p>
+        <p className="collectionsnumber">There are {collections.length} collections in your store</p>
         <div className="new-links">
           <Link to="/add-title" className="new-title link">
             Add Title

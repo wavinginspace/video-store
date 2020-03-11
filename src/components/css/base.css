@@ -134,11 +134,11 @@ iframe {
   max-width: 100%;
 }
 
-input,
-textarea,
-select {
-  font: inherit;
-}
+// input,
+// textarea,
+// select {
+//   font: inherit;
+// }
 
 * {
   -webkit-box-sizing: border-box;

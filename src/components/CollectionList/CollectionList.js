@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Collection from '../Collection/Collection';
+import CollectionLink from '../CollectionLink/CollectionLink';
 import './CollectionList.scss';
 
 export class CollectionList extends Component {
@@ -15,7 +15,7 @@ export class CollectionList extends Component {
         <section className="CollectionList">
           <ul className="collection-list box" aria-live="polite">
             {collections.map(collection => (
-              <Collection key={collection.id} collection={collection} />
+              <CollectionLink key={collection.id} collection={collection} />
             ))}
           </ul>
         </section>

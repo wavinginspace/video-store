@@ -1,4 +1,4 @@
-.Collection {
+.CollectionLink {
   list-style-type: none;
   text-align: center;
   text-decoration: none;
@@ -10,3 +10,6 @@
   text-decoration: none;
   color: black;
 }
+
+.collection-link:hover
+ { color: blue}

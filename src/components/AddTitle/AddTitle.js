@@ -6,7 +6,7 @@ export class AddTitle extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form className="box">
           <label htmlFor="title">Title:</label>
           <input type="text" name="title" required />
           <label htmlFor="collections">Collections:</label>
@@ -54,8 +54,12 @@ export class AddTitle extends Component {
           <label htmlFor="rating">Rating:</label>
           <input type="text" name="rating" />
 
-          <label htmlFor="selling">Selling:</label>
-          <input type="checkbox" name="selling" />
+          <div className="sellinginput">
+            <label htmlFor="selling" className="sellinglabel">
+              Selling:
+            </label>
+            <input type="checkbox" name="selling" className="sellingcheckbox" />
+          </div>
 
           <label htmlFor="last-watched">Last watched:</label>
           <input type="date" name="last-watched" />
@@ -75,7 +79,9 @@ export class AddTitle extends Component {
           <button type="submit">Submit</button>
         </form>
 
-        <Link to="/">back to collections</Link>
+        <Link to="/" className="homelink">
+          <p className="homelinkp">back to collections</p>
+        </Link>
       </div>
     );
   }
