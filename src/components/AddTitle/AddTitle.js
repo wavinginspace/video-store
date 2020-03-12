@@ -1,14 +1,72 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import config from '../../config';
+import ApiContext from '../../ApiContext';
 import './AddTitle.scss';
 
-export class AddTitle extends Component {
+class AddTitle extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: '',
+      selectedCollection: '',
+      collections: [],
+      titleTouched: false,
+      contentTouched: false
+    };
+  }
+
+  static contextType = ApiContext;
+
+  updateTitle(title) {
+    this.setState({
+      title: title,
+      titleTouched: true
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    // const date = new Date();
+    const { title } = this.state;
+
+    const data = {
+      title
+    };
+
+    fetch(`${config.API_ENDPOINT}/api/films`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('there was an error');
+        }
+        console.log(data, this.state);
+        return res.json();
+      })
+      .then(data => {
+        this.context.addFilm(data);
+        this.props.history.push('/');
+      })
+      .catch(err => {});
+  }
+
   render() {
     return (
       <div>
-        <form className="box">
+        <form className="box" onSubmit={e => this.handleSubmit(e)}>
           <label htmlFor="title">Title:</label>
-          <input type="text" name="title" required />
+          <input
+            type="text"
+            name="title"
+            onChange={e => this.updateTitle(e.target.value)}
+            required
+          />
           <label htmlFor="collections">Collections:</label>
           <select type="text" name="collections" id="collections" multiple>
             <option value="">Collection 1</option>
