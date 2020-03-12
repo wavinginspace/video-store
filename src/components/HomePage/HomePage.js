@@ -6,7 +6,7 @@ import './HomePage.scss';
 const collections = [
   {
     id: 0,
-    title: 'Horror',
+    title: 'Horror'
   },
   {
     id: 1,
@@ -17,16 +17,18 @@ const collections = [
     title: 'Documentaries'
   },
   {
-    id: 3, 
+    id: 3,
     title: 'Foreign Films'
   }
-]
+];
 
 export class HomePage extends Component {
   render() {
     return (
       <div className="HomePage">
-        <p className="collectionsnumber">There are {collections.length} collections in your store</p>
+        <p className="collectionsnumber">
+          There are {collections.length} collections in your store
+        </p>
         <div className="new-links">
           <Link to="/add-title" className="new-title link">
             Add Title
@@ -36,7 +38,10 @@ export class HomePage extends Component {
           </Link>
         </div>
 
-        <CollectionList collections={collections}/>
+        <CollectionList collections={collections} />
+        <Link to="/films" className="all-films-link">
+          <p className="all-films-link-p">View all films</p>
+        </Link>
       </div>
     );
   }
