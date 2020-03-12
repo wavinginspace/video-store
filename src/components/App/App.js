@@ -78,8 +78,9 @@ export class App extends Component {
           <main className="App-main">
             <Switch>
               {this.state.loggedIn ? (
-                <Route exact path={'/'} component={HomePage} />
-              ) : (
+                <Route exact path={'/'} render={props => (
+                  <HomePage {...props} films={this.state.films} />
+              )}/>) : (
                 <Route exact path={'/'} component={Welcome} />
               )}
               <Route exact path={'/login'} component={Login} />

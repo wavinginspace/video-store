@@ -1,33 +1,17 @@
 import React, { Component } from 'react';
+import ApiContext from '../../ApiContext';
 import { Link } from 'react-router-dom';
 import CollectionList from '../CollectionList/CollectionList';
 import './HomePage.scss';
 
-const collections = [
-  {
-    id: 0,
-    title: 'Horror'
-  },
-  {
-    id: 1,
-    title: '80s Camp'
-  },
-  {
-    id: 2,
-    title: 'Documentaries'
-  },
-  {
-    id: 3,
-    title: 'Foreign Films'
-  }
-];
-
 export class HomePage extends Component {
+  static contextType = ApiContext;
+
   render() {
     return (
       <div className="HomePage">
         <p className="collectionsnumber">
-          There are {collections.length} collections in your store
+          There are {this.context.films.length} collections in your store
         </p>
         <div className="new-links">
           <Link to="/add-title" className="new-title link">
@@ -38,7 +22,7 @@ export class HomePage extends Component {
           </Link>
         </div>
 
-        <CollectionList collections={collections} />
+        <CollectionList collections={this.context.collections} />
         <Link to="/films" className="all-films-link">
           <p className="all-films-link-p">View all films</p>
         </Link>

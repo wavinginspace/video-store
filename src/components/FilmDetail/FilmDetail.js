@@ -1,5 +1,7 @@
 import React from 'react';
 import './FilmDetail.scss';
+import ApiContext from '../../ApiContext';
+import { findFilm } from '../../services/film-helpers';
 
 class FilmDetail extends React.Component {
   constructor(props) {
@@ -11,11 +13,24 @@ class FilmDetail extends React.Component {
     this.props.history.goBack();
   }
 
+  static defaultProps = {
+    match: {
+      params: {}
+    }
+  };
+
+  static contextType = ApiContext;
+
   render() {
+    const { films = [] } = this.context;
+    let { id } = this.props.match.params;
+
+    const film = findFilm(films, id) || { content: '' };
+
     return (
       <>
         <div className="FilmDetail box">
-          <p>Title: </p>
+          <p>Title: {film.title}</p>
           <p>Collections: </p>
           <p>Director: </p>
           <p>Writers: </p>

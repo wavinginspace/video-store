@@ -1,0 +1,15 @@
+
+export const findCollection = (collections=[], collectionId) =>
+collections.find(collection => collection.id === collectionId)
+
+export const findFilm = (films=[], filmId) =>
+films.find(note => note.id === Number(filmId))
+
+export const getFilmsForFolder = (films=[], collectionId) => (
+(!collectionId)
+  ? films
+  : films.filter(note => note.collection === collectionId)
+)
+
+export const countNotesForFolder = (films=[], collectionId) =>
+films.filter(note => note.collection === collectionId).length
