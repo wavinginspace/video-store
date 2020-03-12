@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FilmLink from '../FilmLink/FilmLink';
+import ApiContext from '../../ApiContext';
+import config from '../../config';
 import './CollectionView.scss';
 
 const films = [
@@ -23,14 +25,47 @@ const films = [
 ];
 
 export class CollectionView extends Component {
+  constructor(props) {
+    super(props);
+    this.goBack = this.goBack.bind(this);
+  }
+
+  goBack() {
+    this.props.history.goBack();
+  }
+
   static defaultProps = {
-    films: []
+    match: {
+      params: {}
+    }
+  };
+
+  static contextType = ApiContext;
+
+  handleClickDelete = e => {
+    e.preventDefault();
+    const collection_id = this.props.match.params.id;
+
+    fetch(`${config.API_ENDPOINT}/api/collections/${collection_id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then(() => {
+        this.context.deleteCollection(parseInt(collection_id));
+        this.goBack();
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
   };
 
   render() {
+    // const { title } = this.props.match.params.id;
     return (
       <>
-      {/* <h2>{this.props.collection.title}</h2> */}
+        {/* <h2>{this.props.collection.title}</h2> */}
         <p className="filmnumber">
           There are {films.length} films in this collection.
         </p>
@@ -40,6 +75,12 @@ export class CollectionView extends Component {
               <FilmLink key={film.id} film={film} />
             ))}
           </ul>
+          <button
+            className="collection-delete-button"
+            onClick={this.handleClickDelete}
+            type="button">
+            Delete Collection
+          </button>
         </div>
         <Link to="/">
           <button>Back</button>

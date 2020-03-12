@@ -56,9 +56,10 @@ export class App extends Component {
   };
 
   handleDeleteCollection = collectionId => {
+    console.log(collectionId);
     this.setState({
-      collections: this.state.collections.filter(x => x.id === collectionId)
-    });
+      collections: this.state.collections.filter(x => x.id !== collectionId)
+    })
   };
 
   render() {

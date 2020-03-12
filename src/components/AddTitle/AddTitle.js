@@ -12,17 +12,17 @@ class AddTitle extends Component {
       title: '',
       selectedCollection: '',
       collections: [],
-      titleTouched: false,
-      contentTouched: false
+      fieldTouched: false,
     };
   }
 
   static contextType = ApiContext;
 
   updateField(field, value) {
+    let fieldTouched = `${field}Touched`;
     this.setState({
       [field]: value,
-      titleTouched: true
+      fieldTouched: true
     });
   }
 
