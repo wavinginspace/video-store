@@ -19,9 +19,9 @@ class AddTitle extends Component {
 
   static contextType = ApiContext;
 
-  updateTitle(title) {
+  updateField(field, value) {
     this.setState({
-      title: title,
+      [field]: value,
       titleTouched: true
     });
   }
@@ -64,7 +64,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="title"
-            onChange={e => this.updateTitle(e.target.value)}
+            onChange={e => this.updateField('title', e.target.value)}
             required
           />
           <label htmlFor="collections">Collections:</label>

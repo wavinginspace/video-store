@@ -1,6 +1,7 @@
 import React from 'react';
 import './FilmDetail.scss';
 import ApiContext from '../../ApiContext';
+import config from '../../config';
 import { findFilm } from '../../services/film-helpers';
 
 class FilmDetail extends React.Component {
@@ -20,6 +21,25 @@ class FilmDetail extends React.Component {
   };
 
   static contextType = ApiContext;
+
+  handleClickDelete = e => {
+    e.preventDefault();
+    const film_id = this.props.match.params.id;
+
+    fetch(`${config.API_ENDPOINT}/api/films/${film_id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then(() => {
+        this.context.deleteFilm(parseInt(film_id));
+        this.goBack();
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  };
 
   render() {
     const { films = [] } = this.context;
@@ -48,6 +68,12 @@ class FilmDetail extends React.Component {
           <p>Tags: </p>
           <p>Notes: </p>
           <p>Memorable Scenes: </p>
+          <button
+            className="film-delete-button"
+            onClick={this.handleClickDelete}
+            type="button">
+            Delete
+          </button>
         </div>
 
         <button onClick={this.goBack}>Back</button>

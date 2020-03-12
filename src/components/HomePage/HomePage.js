@@ -8,11 +8,14 @@ export class HomePage extends Component {
   static contextType = ApiContext;
 
   render() {
+    let numberCollections =
+      this.context.collections.length === 1
+        ? `There is 1 collection in your store`
+        : `There are ${this.context.collections.length} collections in your store.`;
+
     return (
       <div className="HomePage">
-        <p className="collectionsnumber">
-          There are {this.context.films.length} collections in your store
-        </p>
+        <p className="collectionsnumber">{numberCollections}</p>
         <div className="new-links">
           <Link to="/add-title" className="new-title link">
             Add Title
