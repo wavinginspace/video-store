@@ -71,7 +71,7 @@ export class CollectionView extends Component {
     return (
       <>
         <h2>{collection.title}</h2>
-        <p>{collection.notes}</p>
+        <p className="collection-notes">{collection.notes}</p>
         <p className="filmnumber">
           There are {films.length} films in this collection.
         </p>

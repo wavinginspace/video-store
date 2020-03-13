@@ -28,10 +28,11 @@ class AddCollection extends Component {
   handleSubmit(event) {
     event.preventDefault();
     // const date = new Date();
-    const { title } = this.state;
+    const { title, notes } = this.state;
 
     const data = {
-      title
+      title,
+      notes
     };
 
     fetch(`${config.API_ENDPOINT}/api/collections`, {
