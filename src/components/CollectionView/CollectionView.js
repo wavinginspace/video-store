@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FilmLink from '../FilmLink/FilmLink';
+import { findCollection } from '../../services/film-helpers';
 import ApiContext from '../../ApiContext';
 import config from '../../config';
 import './CollectionView.scss';
@@ -62,10 +63,15 @@ export class CollectionView extends Component {
   };
 
   render() {
-    // const { title } = this.props.match.params.id;
+    const { collections = [] } = this.context;
+    let { id } = this.props.match.params;
+
+    const collection = findCollection(collections, id) || { content: '' };
+
     return (
       <>
-        {/* <h2>{this.props.collection.title}</h2> */}
+        <h2>{collection.title}</h2>
+        <p>{collection.notes}</p>
         <p className="filmnumber">
           There are {films.length} films in this collection.
         </p>

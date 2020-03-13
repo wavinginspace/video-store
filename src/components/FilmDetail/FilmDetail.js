@@ -52,9 +52,9 @@ class FilmDetail extends React.Component {
         <div className="FilmDetail box">
           <p>Title: {film.title}</p>
           <p>Collections: </p>
-          <p>Director: </p>
-          <p>Writers: </p>
-          <p>Stars: </p>
+          <p>Director: {film.director} </p>
+          <p>Writers: {film.writers} </p>
+          <p>Stars: {film.stars} </p>
           <p>Year: </p>
           <p>Genre: </p>
           <p>Format: </p>

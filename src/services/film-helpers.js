@@ -1,6 +1,6 @@
 
 export const findCollection = (collections=[], collectionId) =>
-collections.find(collection => collection.id === collectionId)
+collections.find(collection => collection.id === Number(collectionId))
 
 export const findFilm = (films=[], filmId) =>
 films.find(note => note.id === Number(filmId))

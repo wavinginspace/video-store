@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { findCollection } from '../../services/film-helpers';
 import config from '../../config';
 import ApiContext from '../../ApiContext';
 import './AddTitle.scss';
@@ -10,9 +11,12 @@ class AddTitle extends Component {
 
     this.state = {
       title: '',
+      director: '',
+      writers: '',
+      stars: '',
       selectedCollection: '',
       collections: [],
-      fieldTouched: false,
+      fieldTouched: false
     };
   }
 
@@ -22,17 +26,34 @@ class AddTitle extends Component {
     let fieldTouched = `${field}Touched`;
     this.setState({
       [field]: value,
-      fieldTouched: true
+      [fieldTouched]: true
+    });
+  }
+
+  updateSelectedCollection(select) {
+    const id = parseInt(select[select.selectedIndex].id);
+    const title = select[select.selectedIndex].value;
+    console.log(id, title);
+    const collections = this.state.collections;
+
+    this.setState({
+      selectedCollection: title,
+      collections: [...collections, id]
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
     // const date = new Date();
-    const { title } = this.state;
+
+    const { title, director, writers, collections, stars } = this.state;
 
     const data = {
-      title
+      title,
+      collections,
+      director,
+      writers,
+      stars
     };
 
     fetch(`${config.API_ENDPOINT}/api/films`, {
@@ -56,6 +77,20 @@ class AddTitle extends Component {
       .catch(err => {});
   }
 
+  generateCollectionsOptions() {
+    const { collections = [] } = this.context;
+    return collections.map(collection => {
+      return (
+        <option
+          key={collection.id}
+          id={collection.id}
+          value={collection.title}>
+          {collection.title}
+        </option>
+      );
+    });
+  }
+
   render() {
     return (
       <div>
@@ -68,21 +103,37 @@ class AddTitle extends Component {
             required
           />
           <label htmlFor="collections">Collections:</label>
-          <select type="text" name="collections" id="collections" multiple>
-            <option value="">Collection 1</option>
-            <option value="">Collection 2</option>
-            <option value="">Collection 3</option>
-            <option value="">Collection 4</option>
+          <select
+            type="text"
+            name="collections"
+            id="collections"
+            value={this.state.selectedCollection}
+            onChange={e => {
+              this.updateSelectedCollection(e.target);
+            }}>
+            {this.generateCollectionsOptions()}
           </select>
 
           <label htmlFor="director">Director:</label>
-          <input type="text" name="director" />
+          <input
+            type="text"
+            name="director"
+            onChange={e => this.updateField('director', e.target.value)}
+          />
 
           <label htmlFor="writers">Writers:</label>
-          <input type="text" name="writers" />
+          <input
+            type="text"
+            name="writers"
+            onChange={e => this.updateField('writers', e.target.value)}
+          />
 
           <label htmlFor="stars">Stars:</label>
-          <input type="text" name="stars" />
+          <input
+            type="text"
+            name="stars"
+            onChange={e => this.updateField('stars', e.target.value)}
+          />
 
           <label htmlFor="year">Year Released:</label>
           <input type="date" name="year" />

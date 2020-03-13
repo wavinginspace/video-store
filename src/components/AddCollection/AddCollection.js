@@ -21,7 +21,7 @@ class AddCollection extends Component {
     let fieldTouched = `${field}Touched`;
     this.setState({
       [field]: value,
-      fieldTouched: true
+      [fieldTouched]: true
     });
   }
 
