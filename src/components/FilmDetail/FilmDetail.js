@@ -51,7 +51,7 @@ class FilmDetail extends React.Component {
       <>
         <div className="FilmDetail box">
           <p>Title: {film.title}</p>
-          <p>Collections: </p>
+          <p>Collections: {film.selected_collection} </p>
           <p>Director: {film.director} </p>
           <p>Writers: {film.writers} </p>
           <p>Stars: {film.stars} </p>

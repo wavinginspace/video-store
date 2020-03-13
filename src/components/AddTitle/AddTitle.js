@@ -14,13 +14,21 @@ class AddTitle extends Component {
       director: '',
       writers: '',
       stars: '',
-      selectedCollection: '',
+      selected_collection: '',
       collections: [],
       fieldTouched: false
     };
   }
 
   static contextType = ApiContext;
+
+  componentDidMount() {
+    let selected_collection = this.context.collections[0].title;
+
+    this.setState({
+      selected_collection
+    });
+  }
 
   updateField(field, value) {
     let fieldTouched = `${field}Touched`;
@@ -30,27 +38,43 @@ class AddTitle extends Component {
     });
   }
 
+  generateCollectionsOptions() {
+    const { collections = [] } = this.context;
+    return collections.map(collection => {
+      return (
+        <option key={collection.id} id={collection.id} value={collection.title}>
+          {collection.title}
+        </option>
+      );
+    });
+  }
+
+  // TODO this is not updating state correctly.
+
   updateSelectedCollection(select) {
     const id = parseInt(select[select.selectedIndex].id);
     const title = select[select.selectedIndex].value;
-    console.log(id, title);
+
+    console.log(id, title, select[0].value);
     const collections = this.state.collections;
 
-    this.setState({
-      selectedCollection: title,
-      collections: [...collections, id]
-    });
+    this.setState(
+      {
+        selected_collection: title
+      },
+      console.log(this.state)
+    );
   }
 
   handleSubmit(event) {
     event.preventDefault();
     // const date = new Date();
 
-    const { title, director, writers, collections, stars } = this.state;
+    const { title, selected_collection, director, writers, stars } = this.state;
 
     const data = {
       title,
-      collections,
+      selected_collection,
       director,
       writers,
       stars
@@ -77,20 +101,6 @@ class AddTitle extends Component {
       .catch(err => {});
   }
 
-  generateCollectionsOptions() {
-    const { collections = [] } = this.context;
-    return collections.map(collection => {
-      return (
-        <option
-          key={collection.id}
-          id={collection.id}
-          value={collection.title}>
-          {collection.title}
-        </option>
-      );
-    });
-  }
-
   render() {
     return (
       <div>
@@ -104,10 +114,9 @@ class AddTitle extends Component {
           />
           <label htmlFor="collections">Collections:</label>
           <select
-            type="text"
             name="collections"
             id="collections"
-            value={this.state.selectedCollection}
+            value={this.state.selected_collection}
             onChange={e => {
               this.updateSelectedCollection(e.target);
             }}>
