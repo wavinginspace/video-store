@@ -55,19 +55,25 @@ class FilmDetail extends React.Component {
           <p>Director: {film.director} </p>
           <p>Writers: {film.writers} </p>
           <p>Stars: {film.stars} </p>
-          <p>Year: </p>
-          <p>Genre: </p>
-          <p>Format: </p>
-          <p>Version: </p>
-          <p>Rating: </p>
-          <p>Condition: </p>
-          <p>Value: </p>
-          <p>Selling: </p>
-          <p>Last Watched: </p>
-          <p>Trailer: </p>
-          <p>Tags: </p>
-          <p>Notes: </p>
-          <p>Memorable Scenes: </p>
+          <p>Year: {film.year_released} </p>
+          <p>Genre: {film.genre}</p>
+          <p>Format: {film.film_format} </p>
+          <p>Version: {film.film_version}</p>
+          <p>Rating: {film.film_rating}</p>
+          <p>Condition: {film.film_condition} </p>
+          <p>Value: {film.film_value} </p>
+          <p>Selling: {film.selling ? 'yes' : 'no'}</p>
+          <p>Last Watched: {film.last_watched} </p>
+          <p>
+            Trailer:
+            <a href={film.trailer} target="_blank" rel="noopener noreferrer">
+              Watch here
+            </a>
+          </p>
+          <p>Tags: {film.tags} </p>
+          <p>Notes: {film.notes} </p>
+          <p>Memorable Scenes: {film.memorable_scenes}</p>
+          <p>Date Added: {film.date_added}</p>
           <button
             className="film-delete-button"
             onClick={this.handleClickDelete}

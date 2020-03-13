@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { findCollection } from '../../services/film-helpers';
 import config from '../../config';
 import ApiContext from '../../ApiContext';
 import './AddTitle.scss';
@@ -14,8 +13,20 @@ class AddTitle extends Component {
       director: '',
       writers: '',
       stars: '',
+      year_released: '',
+      genre: '',
+      film_format: '',
+      film_version: '',
+      film_condition: '',
+      film_value: '',
+      film_rating: '',
+      selling: false,
+      last_watched: '',
+      trailer: '',
+      tags: '',
+      notes: '',
+      memorable_scenes: '',
       selected_collection: '',
-      collections: [],
       fieldTouched: false
     };
   }
@@ -23,10 +34,9 @@ class AddTitle extends Component {
   static contextType = ApiContext;
 
   componentDidMount() {
-    let selected_collection = this.context.collections[0].title;
-
+    let defaultCollection = this.context.collections[0].title;
     this.setState({
-      selected_collection
+      selected_collection: defaultCollection
     });
   }
 
@@ -55,8 +65,7 @@ class AddTitle extends Component {
     const id = parseInt(select[select.selectedIndex].id);
     const title = select[select.selectedIndex].value;
 
-    console.log(id, title, select[0].value);
-    const collections = this.state.collections;
+    console.log(id, title, select[0].value, this.context.collections);
 
     this.setState(
       {
@@ -68,16 +77,49 @@ class AddTitle extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // const date = new Date();
+    const date_added = new Date();
 
-    const { title, selected_collection, director, writers, stars } = this.state;
+    const {
+      title,
+      selected_collection,
+      director,
+      writers,
+      stars,
+      year_released,
+      genre,
+      film_format,
+      film_version,
+      film_condition,
+      film_value,
+      film_rating,
+      selling,
+      last_watched,
+      trailer,
+      tags,
+      notes,
+      memorable_scenes
+    } = this.state;
 
     const data = {
       title,
       selected_collection,
       director,
       writers,
-      stars
+      stars,
+      year_released,
+      genre,
+      film_format,
+      film_version,
+      film_condition,
+      film_value,
+      film_rating,
+      selling,
+      last_watched,
+      trailer,
+      tags,
+      notes,
+      memorable_scenes,
+      date_added
     };
 
     fetch(`${config.API_ENDPOINT}/api/films`, {
@@ -144,14 +186,25 @@ class AddTitle extends Component {
             onChange={e => this.updateField('stars', e.target.value)}
           />
 
-          <label htmlFor="year">Year Released:</label>
-          <input type="date" name="year" />
+          <label htmlFor="year_released">Year Released:</label>
+          <input
+            type="text"
+            name="year_released"
+            onChange={e => this.updateField('year_released', e.target.value)}
+          />
 
           <label htmlFor="genre">Genre:</label>
-          <input type="text" name="genre" />
+          <input
+            type="text"
+            name="genre"
+            onChange={e => this.updateField('genre', e.target.value)}
+          />
 
-          <label htmlFor="genre">Format:</label>
-          <select name="format" id="format">
+          <label htmlFor="film_format">Format:</label>
+          <select
+            name="film_format"
+            id="film_format"
+            onChange={e => this.updateField('film_format', e.target.value)}>
             <option value="Blu-ray">Blu-ray</option>
             <option value="Digital">Digital</option>
             <option value="DVD">DVD</option>
@@ -160,39 +213,80 @@ class AddTitle extends Component {
             <option value="VHS">VHS</option>
           </select>
 
-          <label htmlFor="version">Version:</label>
-          <input type="text" name="version" />
+          <label htmlFor="film_version">Version:</label>
+          <input
+            type="text"
+            name="film_version"
+            onChange={e => this.updateField('film_version', e.target.value)}
+          />
 
-          <label htmlFor="condition">Condition:</label>
-          <input type="text" name="condition" />
+          <label htmlFor="film_condition">Condition:</label>
+          <input
+            type="text"
+            name="film_condition"
+            onChange={e => this.updateField('film_condition', e.target.value)}
+          />
 
-          <label htmlFor="value">Value:</label>
-          <input type="text" name="value" />
+          <label htmlFor="film_value">Value:</label>
+          <input
+            type="text"
+            name="film_value"
+            onChange={e => this.updateField('film_value', e.target.value)}
+          />
 
-          <label htmlFor="rating">Rating:</label>
-          <input type="text" name="rating" />
+          <label htmlFor="film_rating">Rating:</label>
+          <input
+            type="text"
+            name="film_rating"
+            onChange={e => this.updateField('film_rating', e.target.value)}
+          />
 
           <div className="sellinginput">
             <label htmlFor="selling" className="sellinglabel">
               Selling:
             </label>
-            <input type="checkbox" name="selling" className="sellingcheckbox" />
+            <input
+              type="checkbox"
+              name="selling"
+              className="sellingcheckbox"
+              onChange={e => this.updateField('selling', e.target.value)}
+            />
           </div>
 
-          <label htmlFor="last-watched">Last watched:</label>
-          <input type="date" name="last-watched" />
+          <label htmlFor="last_watched">Last watched:</label>
+          <input
+            type="date"
+            name="last_watched"
+            onChange={e => this.updateField('last_watched', e.target.value)}
+          />
 
           <label htmlFor="trailer">Trailer:</label>
-          <input type="url" name="trailer" />
+          <input
+            type="url"
+            name="trailer"
+            onChange={e => this.updateField('trailer', e.target.value)}
+          />
 
           <label htmlFor="tags">Tags:</label>
-          <input type="text" name="tags" />
+          <input
+            type="text"
+            name="tags"
+            onChange={e => this.updateField('tags', e.target.value)}
+          />
 
           <label htmlFor="notes">Notes:</label>
-          <textarea type="text" name="notes" />
+          <textarea
+            type="text"
+            name="notes"
+            onChange={e => this.updateField('notes', e.target.value)}
+          />
 
-          <label htmlFor="memorable-scenes">Memorable Scenes:</label>
-          <textarea type="text" name="memorable-scenes" />
+          <label htmlFor="memorable_scenes">Memorable Scenes:</label>
+          <textarea
+            type="text"
+            name="memorable_scenes"
+            onChange={e => this.updateField('memorable_scenes', e.target.value)}
+          />
 
           <button type="submit">Submit</button>
         </form>
