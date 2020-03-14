@@ -1,35 +1,45 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FilmLink from '../FilmLink/FilmLink';
-import { findCollection } from '../../services/film-helpers';
+import uuid from 'uuid';
+import {
+  findCollection,
+  getFilmsForCollection
+} from '../../services/film-helpers';
 import ApiContext from '../../ApiContext';
 import config from '../../config';
 import './CollectionView.scss';
 
-const films = [
-  {
-    id: 0,
-    title: 'Last House On The Left'
-  },
-  {
-    id: 1,
-    title: 'Halloween'
-  },
-  {
-    id: 2,
-    title: 'Friday The 13th'
-  },
-  {
-    id: 3,
-    title: 'The Fog'
-  }
-];
+// const films = [
+//   {
+//     id: 0,
+//     title: 'Last House On The Left'
+//   },
+//   {
+//     id: 1,
+//     title: 'Halloween'
+//   },
+//   {
+//     id: 2,
+//     title: 'Friday The 13th'
+//   },
+//   {
+//     id: 3,
+//     title: 'The Fog'
+//   }
+// ];
 
 export class CollectionView extends Component {
   constructor(props) {
     super(props);
     this.goBack = this.goBack.bind(this);
   }
+
+  state = {
+    collection_title: '',
+    collection_notes: '',
+    collection_films: []
+  };
 
   goBack() {
     this.props.history.goBack();
@@ -42,6 +52,24 @@ export class CollectionView extends Component {
   };
 
   static contextType = ApiContext;
+
+  componentDidMount() {
+    const collection_id = this.props.match.params.id;
+
+    this.setState({ collection_title: 'test' });
+
+    fetch(`${config.API_ENDPOINT}/api/collections/${collection_id}`).then(
+      collection => {
+        return collection.json().then(collection => {
+          this.setState({
+            collection_title: collection.title,
+            collection_notes: collection.notes,
+            collection_films: [collection.collection_films]
+          });
+        });
+      }
+    );
+  }
 
   handleClickDelete = e => {
     e.preventDefault();
@@ -63,10 +91,11 @@ export class CollectionView extends Component {
   };
 
   render() {
-    const { collections = [] } = this.context;
+    const { collections = [], films = [] } = this.context;
     let { id } = this.props.match.params;
 
     const collection = findCollection(collections, id) || { content: '' };
+    const collectionFilms = this.state.collection_films;
 
     return (
       <>
@@ -77,8 +106,8 @@ export class CollectionView extends Component {
         </p>
         <div className="CollectionView box">
           <ul className="film-list" aria-live="polite">
-            {films.map(film => (
-              <FilmLink key={film.id} film={film} />
+            {collectionFilms.map(film => (
+              <FilmLink key={film} film={film} />
             ))}
           </ul>
           <button

@@ -34,9 +34,9 @@ class AddTitle extends Component {
   static contextType = ApiContext;
 
   componentDidMount() {
-    let defaultCollection = this.context.collections[0].title;
+  //  let defaultCollection = this.context.collections[0].title;
     this.setState({
-      selected_collection: defaultCollection
+      selected_collection: this.context.collections[0].title
     });
   }
 

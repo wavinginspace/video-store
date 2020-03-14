@@ -18,10 +18,16 @@ export class App extends Component {
   state = {
     loggedIn: true,
     films: [],
-    collections: []
+    collections: [],
+    loading: true
   };
 
   componentDidMount() {
+
+    this.setState({
+      loading: true
+    })
+
     Promise.all([
       fetch(`${config.API_ENDPOINT}/api/films`),
       fetch(`${config.API_ENDPOINT}/api/collections`)
@@ -31,7 +37,7 @@ export class App extends Component {
         return collectionsRes.json().then(e => Promise.reject(e));
       return Promise.all([filmsRes.json(), collectionsRes.json()])
         .then(([films, collections]) => {
-          this.setState({ films, collections });
+          this.setState({ films, collections, loading: false });
         })
         .catch(error => {});
     });
@@ -72,6 +78,14 @@ export class App extends Component {
       addFilm: this.handleAddFilm
     };
 
+    // give fetch time to populate context before returning components
+
+    if (this.state.loading) {
+      return (
+        <></>
+      )
+    }
+
     return (
       <ApiContext.Provider value={value}>
         <div className="App">
@@ -88,6 +102,7 @@ export class App extends Component {
               <Route exact path={'/register'} component={Register} />
               <Route exact path={'/add-title'} component={AddTitle} />
               <Route exact path={'/add-collection'} component={AddCollection} />
+              <Route exact path={'/collections'} component={Welcome} />
               <Route path={'/collections/:id'} component={CollectionView} />
               <Route path={'/films/:id'} component={FilmDetail} />
               <Route
