@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FilmLink from '../FilmLink/FilmLink';
-import {
-  findCollection,
-
-} from '../../services/film-helpers';
+import { findCollection } from '../../services/film-helpers';
 import ApiContext from '../../ApiContext';
 import config from '../../config';
 import './CollectionView.scss';
@@ -37,7 +34,8 @@ export class CollectionView extends Component {
   state = {
     collection_title: '',
     collection_notes: '',
-    collection_films: []
+    collection_films: [],
+    loading: true
   };
 
   goBack() {
@@ -53,22 +51,31 @@ export class CollectionView extends Component {
   static contextType = ApiContext;
 
   componentDidMount() {
-    const collection_id = this.props.match.params.id;
+    this.setState({
+      loading: false
+    });
 
-    this.setState({ collection_title: 'test' });
+    const collection_id = this.props.match.params.id;
 
     fetch(`${config.API_ENDPOINT}/api/collections/${collection_id}`).then(
       collection => {
         return collection.json().then(collection => {
           this.setState({
-            collection_title: collection.title,
-            collection_notes: collection.notes,
-            collection_films: [...collection.collection_films]
+            collection_title: collection.title ? collection.title : '',
+            collection_notes: collection.notes ? collection.notes: '',
+            collection_films: collection.collection_films ? [...collection.collection_films] : []
           });
         });
       }
     );
+
+    this.setState({
+      loading: false
+    });
+    
   }
+
+  
 
   handleClickDelete = e => {
     e.preventDefault();
@@ -90,7 +97,11 @@ export class CollectionView extends Component {
   };
 
   render() {
-    const { collections = [], films = [] } = this.context;
+    if (this.state.loading) {
+      return <></>;
+    }
+
+    const { collections = [] } = this.context;
     let { id } = this.props.match.params;
 
     const collection = findCollection(collections, id) || { content: '' };
@@ -105,9 +116,7 @@ export class CollectionView extends Component {
       <>
         <h2>{collection.title}</h2>
         <p className="collection-notes">{collection.notes}</p>
-        <p className="filmnumber">
-          {numberFilms}
-        </p>
+        <p className="filmnumber">{numberFilms}</p>
         <div className="CollectionView box">
           <ul className="film-list" aria-live="polite">
             {collectionFilms.map(film => (
