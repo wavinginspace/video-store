@@ -5,9 +5,9 @@ import './FilmLink.scss';
 function FilmLink(props) {
   const { film } = props;
   return (
-    <Link to={`/films/${film.id}`} className="film-link" title={film}>
-      <li className="FilmLink" title={film}>
-        {film}
+    <Link to={`/films/${film.id}`} className="film-link" title={film.title}>
+      <li className="FilmLink" title={film.title}>
+        {film.title}
       </li>
     </Link>
   );

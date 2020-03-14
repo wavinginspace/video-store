@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FilmLink from '../FilmLink/FilmLink';
-import uuid from 'uuid';
 import {
   findCollection,
-  getFilmsForCollection
+
 } from '../../services/film-helpers';
 import ApiContext from '../../ApiContext';
 import config from '../../config';
@@ -64,7 +63,7 @@ export class CollectionView extends Component {
           this.setState({
             collection_title: collection.title,
             collection_notes: collection.notes,
-            collection_films: [collection.collection_films]
+            collection_films: [...collection.collection_films]
           });
         });
       }
@@ -97,17 +96,22 @@ export class CollectionView extends Component {
     const collection = findCollection(collections, id) || { content: '' };
     const collectionFilms = this.state.collection_films;
 
+    let numberFilms =
+      this.state.collection_films.length === 1
+        ? `There is 1 film in this collection.`
+        : `There are ${this.state.collection_films.length} films in this collection.`;
+
     return (
       <>
         <h2>{collection.title}</h2>
         <p className="collection-notes">{collection.notes}</p>
         <p className="filmnumber">
-          There are {films.length} films in this collection.
+          {numberFilms}
         </p>
         <div className="CollectionView box">
           <ul className="film-list" aria-live="polite">
             {collectionFilms.map(film => (
-              <FilmLink key={film} film={film} />
+              <FilmLink key={film.id} film={film} />
             ))}
           </ul>
           <button
