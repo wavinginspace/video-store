@@ -10,7 +10,7 @@ class AddTitle extends Component {
 
     this.state = {
       title: '',
-      selected_collections: '',
+      selected_collections: [],
       director: '',
       writers: '',
       stars: '',
@@ -63,12 +63,13 @@ class AddTitle extends Component {
   updateSelectedCollection(select) {
     const id = parseInt(select[select.selectedIndex].id);
     const title = select[select.selectedIndex].value;
+    // const { selected_collections } = this.state;
 
     console.log(id, title, select[0].value, this.context.collections);
 
     this.setState(
       {
-        selected_collections: title
+        selected_collections: [ ...this.state.selected_collections ]
       },
       console.log(this.state)
     );
@@ -154,7 +155,7 @@ class AddTitle extends Component {
           <label htmlFor="collections">Collections:</label>
           <select
             name="collections"
-            id="collections"
+            id="collections" multiple
             value={this.state.selected_collections}
             onChange={e => {
               this.updateSelectedCollection(e.target);
