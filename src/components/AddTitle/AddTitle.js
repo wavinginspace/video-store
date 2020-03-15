@@ -10,7 +10,7 @@ class AddTitle extends Component {
 
     this.state = {
       title: '',
-      collections: '',
+      selected_collections: '',
       director: '',
       writers: '',
       stars: '',
@@ -35,7 +35,7 @@ class AddTitle extends Component {
   componentDidMount() {
   //  let defaultCollection = this.context.collections[0].title;
     this.setState({
-      collections: this.context.collections[0].title
+      selected_collections: this.context.collections[0].title
     });
   }
 
@@ -68,7 +68,7 @@ class AddTitle extends Component {
 
     this.setState(
       {
-        collections: title
+        selected_collections: title
       },
       console.log(this.state)
     );
@@ -80,7 +80,7 @@ class AddTitle extends Component {
 
     const {
       title,
-      collections,
+      selected_collections,
       director,
       writers,
       stars,
@@ -100,7 +100,7 @@ class AddTitle extends Component {
 
     const data = {
       title,
-      collections,
+      selected_collections,
       director,
       writers,
       stars,
@@ -155,7 +155,7 @@ class AddTitle extends Component {
           <select
             name="collections"
             id="collections"
-            value={this.state.collections}
+            value={this.state.selected_collections}
             onChange={e => {
               this.updateSelectedCollection(e.target);
             }}>

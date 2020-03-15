@@ -33,8 +33,8 @@ class FilmDetail extends React.Component {
       }
     })
       .then(() => {
-        this.context.deleteFilm(parseInt(film_id));
         this.goBack();
+        this.context.deleteFilm(parseInt(film_id));
       })
       .catch(error => {
         console.log(error.message);
@@ -46,14 +46,12 @@ class FilmDetail extends React.Component {
     let { id } = this.props.match.params;
 
     const film = findFilm(films, id) || { content: '' };
-
-    const date_added_formatted = film.date_added.slice(0, 10);
-
+    
     return (
       <>
         <div className="FilmDetail box">
           <p>Title: {film.title}</p>
-          <p>Collections: {film.collections} </p>
+          <p>Collections: {film.selected_collections} </p>
           <p>Director: {film.director} </p>
           <p>Writers: {film.writers} </p>
           <p>Stars: {film.stars} </p>
@@ -74,7 +72,7 @@ class FilmDetail extends React.Component {
           <p>Tags: {film.tags} </p>
           <p>Notes: {film.notes} </p>
           <p>Memorable Scenes: {film.memorable_scenes}</p>
-          <p>Date Added: {date_added_formatted}</p>
+          <p>Date Added: {film ? film.date_added.slice(0, 10) : ''}</p>
           <button
             className="film-delete-button"
             onClick={this.handleClickDelete}
