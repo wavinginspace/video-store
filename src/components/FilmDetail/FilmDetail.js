@@ -72,7 +72,7 @@ class FilmDetail extends React.Component {
           <p>Tags: {film.tags} </p>
           <p>Notes: {film.notes} </p>
           <p>Memorable Scenes: {film.memorable_scenes}</p>
-          <p>Date Added: {film ? film.date_added.slice(0, 10) : ''}</p>
+          <p>Date Added: {film.date_added}</p>
           <button
             className="film-delete-button"
             onClick={this.handleClickDelete}

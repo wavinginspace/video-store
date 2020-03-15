@@ -6,25 +6,6 @@ import ApiContext from '../../ApiContext';
 import config from '../../config';
 import './CollectionView.scss';
 
-// const films = [
-//   {
-//     id: 0,
-//     title: 'Last House On The Left'
-//   },
-//   {
-//     id: 1,
-//     title: 'Halloween'
-//   },
-//   {
-//     id: 2,
-//     title: 'Friday The 13th'
-//   },
-//   {
-//     id: 3,
-//     title: 'The Fog'
-//   }
-// ];
-
 export class CollectionView extends Component {
   constructor(props) {
     super(props);
@@ -62,16 +43,15 @@ export class CollectionView extends Component {
         return collection.json().then(collection => {
           this.setState({
             collection_title: collection.title ? collection.title : '',
-            collection_notes: collection.notes ? collection.notes: '',
-            collection_films: collection.collection_films ? [...collection.collection_films] : []
+            collection_notes: collection.notes ? collection.notes : '',
+            collection_films: collection.collection_films
+              ? [...collection.collection_films]
+              : []
           });
         });
       }
     );
-    
   }
-
-  
 
   handleClickDelete = e => {
     e.preventDefault();
