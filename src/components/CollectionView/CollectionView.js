@@ -68,10 +68,6 @@ export class CollectionView extends Component {
         });
       }
     );
-
-    this.setState({
-      loading: false
-    });
     
   }
 
