@@ -22,7 +22,6 @@ class AddTitle extends Component {
       film_value: '',
       film_rating: '',
       selling: false,
-      last_watched: '',
       trailer: '',
       tags: '',
       notes: '',
@@ -93,7 +92,6 @@ class AddTitle extends Component {
       film_value,
       film_rating,
       selling,
-      last_watched,
       trailer,
       tags,
       notes,
@@ -114,7 +112,6 @@ class AddTitle extends Component {
       film_value,
       film_rating,
       selling,
-      last_watched,
       trailer,
       tags,
       notes,
@@ -252,13 +249,6 @@ class AddTitle extends Component {
               onChange={e => this.updateField('selling', e.target.value)}
             />
           </div>
-
-          <label htmlFor="last_watched">Last watched:</label>
-          <input
-            type="date"
-            name="last_watched"
-            onChange={e => this.updateField('last_watched', e.target.value)}
-          />
 
           <label htmlFor="trailer">Trailer:</label>
           <input

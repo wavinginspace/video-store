@@ -47,6 +47,8 @@ class FilmDetail extends React.Component {
 
     const film = findFilm(films, id) || { content: '' };
 
+    const date_added_formatted = film.date_added.slice(0, 10);
+
     return (
       <>
         <div className="FilmDetail box">
@@ -63,7 +65,6 @@ class FilmDetail extends React.Component {
           <p>Condition: {film.film_condition} </p>
           <p>Value: {film.film_value} </p>
           <p>Selling: {film.selling ? 'yes' : 'no'}</p>
-          <p>Last Watched: {film.last_watched} </p>
           <p>
             Trailer:
             <a href={film.trailer} target="_blank" rel="noopener noreferrer">
@@ -73,7 +74,7 @@ class FilmDetail extends React.Component {
           <p>Tags: {film.tags} </p>
           <p>Notes: {film.notes} </p>
           <p>Memorable Scenes: {film.memorable_scenes}</p>
-          <p>Date Added: {film.date_added}</p>
+          <p>Date Added: {date_added_formatted}</p>
           <button
             className="film-delete-button"
             onClick={this.handleClickDelete}
