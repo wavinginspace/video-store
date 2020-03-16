@@ -10,6 +10,10 @@ class FilmDetail extends React.Component {
     this.goBack = this.goBack.bind(this);
   }
 
+  state = {
+    collections: ''
+  };
+
   goBack() {
     this.props.history.goBack();
   }
@@ -21,6 +25,18 @@ class FilmDetail extends React.Component {
   };
 
   static contextType = ApiContext;
+
+  componentDidMount() {
+    const film_id = this.props.match.params.id;
+
+    fetch(`${config.API_ENDPOINT}/api/films/${film_id}`)
+    .then(res => res.json())
+    .then(data => this.setState({
+      collections: data.collections.split(',').join(', ')
+    }))
+  
+
+  }
 
   handleClickDelete = e => {
     e.preventDefault();
@@ -51,7 +67,7 @@ class FilmDetail extends React.Component {
       <>
         <div className="FilmDetail box">
           <p>Title: {film.title}</p>
-          <p>Collections: {film.selected_collections} </p>
+          <p>Collections: {this.state.collections} </p>
           <p>Director: {film.director} </p>
           <p>Writers: {film.writers} </p>
           <p>Stars: {film.stars} </p>
