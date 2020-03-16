@@ -33,7 +33,6 @@ class AddTitle extends Component {
   static contextType = ApiContext;
 
   componentDidMount() {
-  //  let defaultCollection = this.context.collections[0].title;
     this.setState({
       selected_collections: this.context.collections[0].title
     });
@@ -61,25 +60,21 @@ class AddTitle extends Component {
   // TODO this is not updating state correctly.
 
   updateSelectedCollection(select) {
-
     let result = [];
     let options = select && select.options;
     let opt;
-  
-    for (var i=0, iLen=options.length; i<iLen; i++) {
+
+    for (var i = 0, iLen = options.length; i < iLen; i++) {
       opt = options[i];
-  
+
       if (opt.selected) {
         result.push(opt.value || opt.text);
       }
     }
-  
-    this.setState(
-      {
-        selected_collections: [ ...result ]
-      },
-      console.log(this.state)
-    );
+
+    this.setState({
+      selected_collections: [...result]
+    });
   }
 
   handleSubmit(event) {
@@ -138,7 +133,6 @@ class AddTitle extends Component {
         if (!res.ok) {
           throw new Error('there was an error');
         }
-        console.log(data, this.state);
         return res.json();
       })
       .then(data => {
@@ -162,7 +156,8 @@ class AddTitle extends Component {
           <label htmlFor="collections">Collections:</label>
           <select
             name="collections"
-            id="collections" multiple
+            id="collections"
+            multiple
             value={this.state.selected_collections}
             onChange={e => {
               this.updateSelectedCollection(e.target);

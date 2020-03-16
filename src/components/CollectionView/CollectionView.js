@@ -32,8 +32,6 @@ export class CollectionView extends Component {
   static contextType = ApiContext;
 
   componentDidMount() {
-    
-
     const collection_id = this.props.match.params.id;
 
     fetch(`${config.API_ENDPOINT}/api/collections/${collection_id}`).then(
@@ -45,7 +43,7 @@ export class CollectionView extends Component {
             collection_films: collection.collection_films
               ? [...collection.collection_films]
               : [],
-              loading: false
+            loading: false
           });
         });
       }
@@ -66,9 +64,7 @@ export class CollectionView extends Component {
         this.context.deleteCollection(parseInt(collection_id));
         this.goBack();
       })
-      .catch(error => {
-        console.log(error.message);
-      });
+      .catch(() => {});
   };
 
   render() {

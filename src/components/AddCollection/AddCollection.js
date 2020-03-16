@@ -46,7 +46,6 @@ class AddCollection extends Component {
         if (!res.ok) {
           throw new Error('there was an error');
         }
-        console.log(data, this.state);
         return res.json();
       })
       .then(data => {

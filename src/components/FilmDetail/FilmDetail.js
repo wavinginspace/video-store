@@ -11,7 +11,8 @@ class FilmDetail extends React.Component {
   }
 
   state = {
-    collections: ''
+    collections: '',
+    loading: true
   };
 
   goBack() {
@@ -30,12 +31,13 @@ class FilmDetail extends React.Component {
     const film_id = this.props.match.params.id;
 
     fetch(`${config.API_ENDPOINT}/api/films/${film_id}`)
-    .then(res => res.json())
-    .then(data => this.setState({
-      collections: data.collections.split(',').join(', ')
-    }))
-  
-
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          collections: data.collections.split(',').join(', '),
+          loading: false
+        })
+      );
   }
 
   handleClickDelete = e => {
@@ -52,9 +54,7 @@ class FilmDetail extends React.Component {
         this.goBack();
         this.context.deleteFilm(parseInt(film_id));
       })
-      .catch(error => {
-        console.log(error.message);
-      });
+      .catch(() => {});
   };
 
   render() {
@@ -62,7 +62,11 @@ class FilmDetail extends React.Component {
     let { id } = this.props.match.params;
 
     const film = findFilm(films, id) || { content: '' };
-    
+
+    if (this.state.loading) {
+      return <></>;
+    }
+
     return (
       <>
         <div className="FilmDetail box">
