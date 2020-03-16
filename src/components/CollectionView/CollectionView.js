@@ -32,9 +32,7 @@ export class CollectionView extends Component {
   static contextType = ApiContext;
 
   componentDidMount() {
-    this.setState({
-      loading: false
-    });
+    
 
     const collection_id = this.props.match.params.id;
 
@@ -46,7 +44,8 @@ export class CollectionView extends Component {
             collection_notes: collection.notes ? collection.notes : '',
             collection_films: collection.collection_films
               ? [...collection.collection_films]
-              : []
+              : [],
+              loading: false
           });
         });
       }
