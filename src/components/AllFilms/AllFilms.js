@@ -17,8 +17,8 @@ export class AllFilms extends Component {
 
     return (
       <>
-        <p className="filmnumber">{numberFilms}</p>
-        <section className="AllFilms box">
+        <p className="filmnumber fadeIn">{numberFilms}</p>
+        <section className="AllFilms fadeIn box">
           <ul>
             {films.map(film => (
               <FilmLink key={film.id} film={film} />

@@ -14,7 +14,7 @@ export class HomePage extends Component {
         : `There are ${this.context.collections.length} collections in your store.`;
 
     return (
-      <div className="HomePage">
+      <div className="HomePage fadeIn">
         <p className="collectionsnumber">{numberCollections}</p>
         <div className="new-links">
           <Link to="/add-title" className="new-title link">
@@ -24,11 +24,11 @@ export class HomePage extends Component {
             Add Collection
           </Link>
         </div>
-
-        <CollectionList collections={this.context.collections} />
-        <Link to="/films" className="all-films-link">
-          <p className="all-films-link-p">View all films</p>
-        </Link>
+        
+          <CollectionList collections={this.context.collections} />
+          <Link to="/films" className="all-films-link">
+            <p className="all-films-link-p">View all films</p>
+          </Link>
       </div>
     );
   }

@@ -69,7 +69,8 @@ class FilmDetail extends React.Component {
 
     return (
       <>
-        <div className="FilmDetail box">
+      
+        <div className="FilmDetail box fadeIn">
           <p>Title: {film.title}</p>
           <p>Collections: {this.state.collections} </p>
           <p>Director: {film.director} </p>
@@ -102,6 +103,7 @@ class FilmDetail extends React.Component {
         </div>
 
         <button onClick={this.goBack}>Back</button>
+        
       </>
     );
   }

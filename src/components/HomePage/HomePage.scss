@@ -38,3 +38,19 @@
   text-decoration: none;
   color: rgb(19, 38, 252);
 }
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

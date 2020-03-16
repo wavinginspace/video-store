@@ -87,9 +87,9 @@ export class App extends Component {
 
     return (
       <ApiContext.Provider value={value}>
-        <div className="App">
+        <div className="App fadeIn">
           <Header />
-          <main className="App-main">
+          <main className="App-main fadeIn">
             <Switch>
               {this.state.loggedIn ? (
                 <Route exact path={'/'} render={props => (

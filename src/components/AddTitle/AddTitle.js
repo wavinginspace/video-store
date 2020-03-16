@@ -144,7 +144,7 @@ class AddTitle extends Component {
 
   render() {
     return (
-      <div>
+      <div className="AddTitle fadeIn">
         <form className="box" onSubmit={e => this.handleSubmit(e)}>
           <label htmlFor="title">Title:</label>
           <input

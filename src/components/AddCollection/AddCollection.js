@@ -57,7 +57,7 @@ class AddCollection extends Component {
 
   render() {
     return (
-      <div className="AddCollection">
+      <div className="AddCollection fadeIn">
         <form className="box" onSubmit={e => this.handleSubmit(e)}>
           <label htmlFor="title">Title:</label>
           <input type="text" name="title" onChange={e => this.updateField('title', e.target.value)}/>

@@ -84,7 +84,7 @@ export class CollectionView extends Component {
         : `There are ${this.state.collection_films.length} films in this collection.`;
 
     return (
-      <>
+      <section className="fadeIn">
         <h2>{collection.title}</h2>
         <p className="collection-notes">{collection.notes}</p>
         <p className="filmnumber">{numberFilms}</p>
@@ -104,7 +104,7 @@ export class CollectionView extends Component {
         <Link to="/">
           <button>Back</button>
         </Link>
-      </>
+      </section>
     );
   }
 }

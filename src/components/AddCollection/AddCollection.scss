@@ -1,3 +1,19 @@
 .add-collection.button {
   background-color:rgb(10, 254, 10);
 }
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
