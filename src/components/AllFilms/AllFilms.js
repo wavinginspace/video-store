@@ -17,14 +17,14 @@ export class AllFilms extends Component {
 
     return (
       <>
-        <p>{numberFilms}</p>
-        <div className="AllFilms box">
+        <p className="filmnumber">{numberFilms}</p>
+        <section className="AllFilms box">
           <ul>
             {films.map(film => (
               <FilmLink key={film.id} film={film} />
             ))}
           </ul>
-        </div>
+        </section>
       </>
     );
   }
