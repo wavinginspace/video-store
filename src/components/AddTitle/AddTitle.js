@@ -51,7 +51,7 @@ class AddTitle extends Component {
     const { collections = [] } = this.context;
     return collections.map(collection => {
       return (
-        <option key={collection.id} id={collection.id} value={collection.title}>
+        <option key={collection.id} id={collection.id} value={collection.id}>
           {collection.title}
         </option>
       );
@@ -61,15 +61,22 @@ class AddTitle extends Component {
   // TODO this is not updating state correctly.
 
   updateSelectedCollection(select) {
-    const id = parseInt(select[select.selectedIndex].id);
-    const title = select[select.selectedIndex].value;
-    // const { selected_collections } = this.state;
 
-    console.log(id, title, select[0].value, this.context.collections);
-
+    let result = [];
+    let options = select && select.options;
+    let opt;
+  
+    for (var i=0, iLen=options.length; i<iLen; i++) {
+      opt = options[i];
+  
+      if (opt.selected) {
+        result.push(opt.value || opt.text);
+      }
+    }
+  
     this.setState(
       {
-        selected_collections: [ ...this.state.selected_collections ]
+        selected_collections: [ ...result ]
       },
       console.log(this.state)
     );
