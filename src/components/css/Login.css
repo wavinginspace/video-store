@@ -1,3 +1,11 @@
+:root {
+  --main: var(--main);
+  --nav: #499acc;
+  --headergrad: linear-gradient(0deg, #ff7676, #fffd8f);
+  --light: #fffd8f;
+  --headerog: #ff7676;
+}
+
 .Login {
   margin: 0 auto;
 }

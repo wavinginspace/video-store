@@ -1,4 +1,39 @@
+:root {
+  --main: var(--main);
+  --nav: #499acc;
+  --headergrad: linear-gradient(0deg, #ff7676, #fffd8f);
+  --light: #fffd8f;
+  --headerog: #ff7676;
+}
+
 .add-collection.button {
   background-color: #0afe0a;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=AddCollection.css.map */

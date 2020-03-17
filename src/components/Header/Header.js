@@ -28,7 +28,7 @@ export class Header extends Component {
           <Link to="/" className="homelink">
             <h1>Video Store</h1>
           </Link>
-          <p>Welcome to Video Store! Your personal film collection assistant</p>
+          <p>Welcome to Video Store! Your personal film collection assistant.</p>
         </header>
       </div>
     );

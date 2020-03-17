@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,UAAU,EAAE,MAAM;CACnB;;AAED,AAAA,MAAM,CAAC;EACL,OAAO,EAAE,KAAK;EACd,OAAO,EAAE,IAAI;CACd",
+    "mappings": "AEAA,AAAA,KAAK,CAAC;EACJ,MAAM,CAAA,YAAC;EACP,KAAK,CAAA,QAAC;EACN,YAAY,CAAA,wCAAC;EACb,OAAO,CAAA,QAAC;EACR,UAAU,CAAA,QAAC;CACZ;;AFHD,AAAA,QAAQ,CAAC;EACP,UAAU,EAAE,MAAM;CACnB;;AAED,AAAA,MAAM,CAAC;EACL,OAAO,EAAE,KAAK;EACd,OAAO,EAAE,IAAI;CACd",
     "sources": [
-        "../Welcome/Welcome.scss"
+        "../Welcome/Welcome.scss",
+        "../../styles/_breakpoints.scss",
+        "../../styles/_variables.scss"
     ],
     "names": [],
     "file": "Welcome.css"

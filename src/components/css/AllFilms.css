@@ -6,33 +6,15 @@
   --headerog: #ff7676;
 }
 
-.CollectionView {
-  margin: 1rem;
-  padding: 1rem;
-}
-
-.film-list {
-  padding: 1rem;
-}
-
 .filmnumber {
-  margin-bottom: 1rem;
-}
-
-.collection-notes {
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-h2 {
   margin-bottom: 1rem;
 }
 
 .fadeIn {
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
-  -webkit-animation-duration: .2s;
-          animation-duration: .2s;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -54,4 +36,4 @@ h2 {
     opacity: 1;
   }
 }
-/*# sourceMappingURL=CollectionView.css.map */
+/*# sourceMappingURL=AllFilms.css.map */

@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One&display=swap");
+:root {
+  --main: var(--main);
+  --nav: #499acc;
+  --headergrad: linear-gradient(0deg, #ff7676, #fffd8f);
+  --light: #fffd8f;
+  --headerog: #ff7676;
+}
+
 .Header {
   padding: 2rem;
 }
@@ -8,8 +17,11 @@ p {
 }
 
 h1 {
-  font-size: 3rem;
-  color: black;
+  font-size: 4rem;
+  font-family: 'Fredoka One', Lato, monospace;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--main);
   margin-bottom: 1rem;
 }
 

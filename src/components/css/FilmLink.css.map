@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,eAAe,EAAE,IAAI;EACrB,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,KAAK;CACb;;AAED,AAAA,SAAS,CAAC;EACR,MAAM,EAAE,SAAS;CAClB;;AAED,AAAA,SAAS,AAAA,MAAM,CAAC;EACd,KAAK,EAAE,IAAI;CACZ",
+    "mappings": "AEAA,AAAA,KAAK,CAAC;EACJ,MAAM,CAAA,YAAC;EACP,KAAK,CAAA,QAAC;EACN,YAAY,CAAA,wCAAC;EACb,OAAO,CAAA,QAAC;EACR,UAAU,CAAA,QAAC;CACZ;;AFHD,AAAA,UAAU,CAAC;EACT,eAAe,EAAE,IAAI;EACrB,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,WAAW;CACnB;;AAED,AAAA,SAAS,CAAC;EACR,MAAM,EAAE,SAAS;CAClB;;AAED,AAAA,SAAS,AAAA,MAAM,CAAC;EACd,KAAK,EAAE,IAAI;CACZ",
     "sources": [
-        "../FilmLink/FilmLink.scss"
+        "../FilmLink/FilmLink.scss",
+        "../../styles/_breakpoints.scss",
+        "../../styles/_variables.scss"
     ],
     "names": [],
     "file": "FilmLink.css"

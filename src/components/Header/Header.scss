@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import '../../styles/_breakpoints.scss';
+@import '../../styles/_variables.scss';
 
 .Header {
   padding: 2rem;
@@ -11,10 +13,10 @@ p {
 
 h1 {
   font-size: 4rem;
-  font-family: 'Fredoka One', Lato;
+  font-family: 'Fredoka One', Lato, monospace;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: black;
+  color: var(--main);
   margin-bottom: 1rem;
 }
 

@@ -1,3 +1,11 @@
+:root {
+  --main: var(--main);
+  --nav: #499acc;
+  --headergrad: linear-gradient(0deg, #ff7676, #fffd8f);
+  --light: #fffd8f;
+  --headerog: #ff7676;
+}
+
 .HomePage {
   margin: 0 auto;
   display: -webkit-box;
@@ -24,7 +32,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 auto 1rem;
+  margin: 1rem auto 2rem;
 }
 
 .new-title,
@@ -44,5 +52,43 @@
 
 .collectionsnumber {
   margin-bottom: 1rem;
+}
+
+.all-films-link {
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  color: #1326fc;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+p {
+  font-family: 'Roboto Mono';
 }
 /*# sourceMappingURL=HomePage.css.map */

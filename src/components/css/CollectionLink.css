@@ -1,14 +1,22 @@
+:root {
+  --main: var(--main);
+  --nav: #499acc;
+  --headergrad: linear-gradient(0deg, #ff7676, #fffd8f);
+  --light: #fffd8f;
+  --headerog: #ff7676;
+}
+
 .CollectionLink {
   list-style-type: none;
   text-align: center;
   text-decoration: none;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
 .collection-link {
   text-decoration: none;
-  color: black;
+  color: var(--main);
 }
 
 .collection-link:hover {

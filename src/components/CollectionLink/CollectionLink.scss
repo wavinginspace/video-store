@@ -1,15 +1,19 @@
+@import '../../styles/_breakpoints.scss';
+@import '../../styles/_variables.scss';
+
 .CollectionLink {
   list-style-type: none;
   text-align: center;
   text-decoration: none;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
 .collection-link {
   text-decoration: none;
-  color: black;
+  color: var(--main);
 }
 
-.collection-link:hover
- { color: blue}
+.collection-link:hover {
+  color: blue;
+}

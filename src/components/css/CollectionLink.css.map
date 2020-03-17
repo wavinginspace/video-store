@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,eAAe,EAAE,IAAI;EACrB,UAAU,EAAE,MAAM;EAClB,eAAe,EAAE,IAAI;EACrB,aAAa,EAAE,KAAK;EACpB,SAAS,EAAE,MAAM;CAClB;;AAED,AAAA,gBAAgB,CAAC;EACf,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,KAAK;CACb;;AAED,AAAA,gBAAgB,AAAA,MAAM,CACrB;EAAE,KAAK,EAAE,IAAI;CAAE",
+    "mappings": "AEAA,AAAA,KAAK,CAAC;EACJ,MAAM,CAAA,YAAC;EACP,KAAK,CAAA,QAAC;EACN,YAAY,CAAA,wCAAC;EACb,OAAO,CAAA,QAAC;EACR,UAAU,CAAA,QAAC;CACZ;;AFHD,AAAA,eAAe,CAAC;EACd,eAAe,EAAE,IAAI;EACrB,UAAU,EAAE,MAAM;EAClB,eAAe,EAAE,IAAI;EACrB,aAAa,EAAE,MAAM;EACrB,SAAS,EAAE,MAAM;CAClB;;AAED,AAAA,gBAAgB,CAAC;EACf,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,WAAW;CACnB;;AAED,AAAA,gBAAgB,AAAA,MAAM,CAAC;EACrB,KAAK,EAAE,IAAI;CACZ",
     "sources": [
-        "../CollectionLink/CollectionLink.scss"
+        "../CollectionLink/CollectionLink.scss",
+        "../../styles/_breakpoints.scss",
+        "../../styles/_variables.scss"
     ],
     "names": [],
     "file": "CollectionLink.css"

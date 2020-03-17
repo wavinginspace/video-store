@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CACpB;;AAED,AAAA,gBAAgB,CAAC;EACf,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACX;;AAED,AAAA,mBAAmB,CAAC;EAClB,aAAa,EAAE,IAAI;CACpB",
+    "mappings": "AEAA,AAAA,KAAK,CAAC;EACJ,MAAM,CAAA,YAAC;EACP,KAAK,CAAA,QAAC;EACN,YAAY,CAAA,wCAAC;EACb,OAAO,CAAA,QAAC;EACR,UAAU,CAAA,QAAC;CACZ;;AFHD,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CACpB;;AAED,AAAA,gBAAgB,CAAC;EACf,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACX;;AAED,AAAA,mBAAmB,CAAC;EAClB,aAAa,EAAE,IAAI;CACpB;;AAED,AAAA,CAAC,EAAE,EAAE,EAAE,EAAE,EAAE,CAAC,CAAC;EACX,WAAW,EAAE,aAAa;CAC3B",
     "sources": [
-        "../CollectionList/CollectionList.scss"
+        "../CollectionList/CollectionList.scss",
+        "../../styles/_breakpoints.scss",
+        "../../styles/_variables.scss"
     ],
     "names": [],
     "file": "CollectionList.css"

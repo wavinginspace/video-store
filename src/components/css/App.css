@@ -1,3 +1,11 @@
+:root {
+  --main: var(--main);
+  --nav: #499acc;
+  --headergrad: linear-gradient(0deg, #ff7676, #fffd8f);
+  --light: #fffd8f;
+  --headerog: #ff7676;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -9,6 +17,7 @@ main {
   font-family: Arial;
   font-size: 16px;
   padding: 1rem;
+  color: var(--main);
 }
 
 button {
@@ -17,9 +26,41 @@ button {
 }
 
 .box {
-  border: 2px solid black;
+  border: 2px solid var(--main);
   width: 80%;
   margin: 0 auto 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+p,
+label {
+  font-family: 'Roboto Mono';
 }
 /*# sourceMappingURL=App.css.map */

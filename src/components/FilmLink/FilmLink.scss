@@ -1,7 +1,10 @@
+@import '../../styles/_breakpoints.scss';
+@import '../../styles/_variables.scss';
+
 .film-link {
   text-decoration: none;
   list-style-type: none;
-  color: black;
+  color: var(--main);
 }
 
 .FilmLink {

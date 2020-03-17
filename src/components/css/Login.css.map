@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,MAAM,CAAC;EACL,MAAM,EAAE,MAAM;CACf;;AAED,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,cAAc,EAAE,MAAM;CACvB;;AAED,AAAA,EAAE,CAAC;EACD,UAAU,EAAE,MAAM;CACnB",
+    "mappings": "AEAA,AAAA,KAAK,CAAC;EACJ,MAAM,CAAA,YAAC;EACP,KAAK,CAAA,QAAC;EACN,YAAY,CAAA,wCAAC;EACb,OAAO,CAAA,QAAC;EACR,UAAU,CAAA,QAAC;CACZ;;AFHD,AAAA,MAAM,CAAC;EACL,MAAM,EAAE,MAAM;CACf;;AAED,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,cAAc,EAAE,MAAM;CACvB;;AAED,AAAA,EAAE,CAAC;EACD,UAAU,EAAE,MAAM;CACnB",
     "sources": [
-        "../Login/Login.scss"
+        "../Login/Login.scss",
+        "../../styles/_breakpoints.scss",
+        "../../styles/_variables.scss"
     ],
     "names": [],
     "file": "Login.css"

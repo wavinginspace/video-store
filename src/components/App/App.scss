@@ -1,3 +1,6 @@
+@import '../../styles/_breakpoints.scss';
+@import '../../styles/_variables.scss';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,6 +11,7 @@ main {
   font-family: Arial;
   font-size: 16px;
   padding: 1rem;
+  color: var(--main);
 }
 
 button {
@@ -16,15 +20,15 @@ button {
 }
 
 .box {
-  border: 2px solid black;
+  border: 2px solid var(--main);
   width: 80%;
   margin: 0 auto 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .fadeIn {
   animation-name: fadeIn;
-  animation-duration: .2s;
+  animation-duration: 0.2s;
   animation-fill-mode: forwards;
 }
 
@@ -38,6 +42,7 @@ button {
   }
 }
 
-p, label {
-  font-family: 'Roboto Mono'
+p,
+label {
+  font-family: 'Roboto Mono';
 }

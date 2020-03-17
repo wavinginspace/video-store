@@ -1,3 +1,11 @@
+:root {
+  --main: var(--main);
+  --nav: #499acc;
+  --headergrad: linear-gradient(0deg, #ff7676, #fffd8f);
+  --light: #fffd8f;
+  --headerog: #ff7676;
+}
+
 .CollectionList {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,5 +25,9 @@
 
 .collections-header {
   margin-bottom: 1rem;
+}
+
+p, li, h2, a {
+  font-family: 'Roboto Mono';
 }
 /*# sourceMappingURL=CollectionList.css.map */

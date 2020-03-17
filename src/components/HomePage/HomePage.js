@@ -8,14 +8,19 @@ export class HomePage extends Component {
   static contextType = ApiContext;
 
   render() {
+    let numberFilms =
+      this.context.films.length === 1
+        ? `There is 1 film and `
+        : `There are ${this.context.films.length} films and `;
+
     let numberCollections =
       this.context.collections.length === 1
-        ? `There is 1 collection in your store`
-        : `There are ${this.context.collections.length} collections in your store.`;
+        ? `1 collection in your store`
+        : `${this.context.collections.length} collections in your store.`;
 
     return (
       <div className="HomePage fadeIn">
-        <p className="collectionsnumber">{numberCollections}</p>
+        <p className="storecount">{numberFilms}{numberCollections}</p>
         <div className="new-links">
           <Link to="/add-title" className="new-title link">
             Add Title
@@ -24,11 +29,11 @@ export class HomePage extends Component {
             Add Collection
           </Link>
         </div>
-        
-          <CollectionList collections={this.context.collections} />
-          <Link to="/films" className="all-films-link">
-            <p className="all-films-link-p">View all films</p>
-          </Link>
+
+        <CollectionList collections={this.context.collections} />
+        <Link to="/films" className="all-films-link">
+          <p className="all-films-link-p">View all films</p>
+        </Link>
       </div>
     );
   }

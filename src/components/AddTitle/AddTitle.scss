@@ -1,3 +1,6 @@
+@import '../../styles/_breakpoints.scss';
+@import '../../styles/_variables.scss';
+
 label {
   display: block;
   margin: .5rem auto;
@@ -54,7 +57,7 @@ textarea {
 .homelink {
   text-decoration: none;
   margin: 1rem;
-  color: black;
+  color: var(--main);
 }
 
 .homelinkp {
