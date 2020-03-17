@@ -87,16 +87,18 @@ export class CollectionView extends Component {
       <section className="fadeIn">
         <h2>{collection.title}</h2>
         <p className="collection-notes">{collection.notes}</p>
-
+        <Link to="/add-title" className="new-title link add-view">
+          Add Title
+        </Link>
         <p className="filmnumber">{numberFilms}</p>
         <div className="CollectionView box">
           <ul className="film-list" aria-live="polite">
             {collectionFilms
               .sort(function(a, b) {
-                if (a.title < b.title) {
+                if (a.title.toLowerCase() < b.title.toLowerCase()) {
                   return -1;
                 }
-                if (a.title > b.title) {
+                if (a.title.toLowerCase() > b.title.toLowerCase()) {
                   return 1;
                 }
                 return 0;
@@ -105,17 +107,16 @@ export class CollectionView extends Component {
                 <FilmLink key={film.id} film={film} />
               ))}
           </ul>
+          <button
+            className="collection-delete-button"
+            onClick={this.handleClickDelete}
+            type="button">
+            Delete Collection
+          </button>
         </div>
-        <Link to="/">
-          <button>Back</button>
+        <Link className="back-button" to="/">
+          <p className="back-button-p">Back Home</p>
         </Link>
-
-        <button
-          className="collection-delete-button"
-          onClick={this.handleClickDelete}
-          type="button">
-          Delete Collection
-        </button>
       </section>
     );
   }

@@ -143,10 +143,9 @@ class AddTitle extends Component {
   }
 
   render() {
-
     const dropdownStyle = {
       fontFamily: 'monospace'
-    }
+    };
 
     return (
       <div className="AddTitle fadeIn">
@@ -159,7 +158,9 @@ class AddTitle extends Component {
             onChange={e => this.updateField('title', e.target.value)}
             required
           />
-          <label className="collections-label" htmlFor="collections">Collections:</label>
+          <label className="collections-label" htmlFor="collections">
+            Collections:
+          </label>
           <select
             name="collections"
             id="collections"
@@ -223,7 +224,6 @@ class AddTitle extends Component {
             <option value="Other">Other</option>
             <option value="Reel">Reel</option>
             <option value="VHS">VHS</option>
-            
           </select>
 
           <label htmlFor="film_version">Version:</label>
@@ -298,16 +298,20 @@ class AddTitle extends Component {
           <label htmlFor="memorable_scenes">Memorable Scenes:</label>
           <textarea
             type="text"
+            rows="10"
+            cols="40"
             autoComplete="off"
             name="memorable_scenes"
             onChange={e => this.updateField('memorable_scenes', e.target.value)}
           />
 
-          <button className="submit-button" type="submit">Submit</button>
+          <button className="submit-button" type="submit">
+            Submit
+          </button>
         </form>
 
-        <Link to="/" className="homelink">
-          <p className="homelinkp">back to collections</p>
+        <Link to="/" className="back-button">
+          <p className="back-button-p">back to collections</p>
         </Link>
       </div>
     );

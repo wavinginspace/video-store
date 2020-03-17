@@ -1,13 +1,9 @@
 @import '../../styles/_breakpoints.scss';
 @import '../../styles/_variables.scss';
 
-.filmnumber {
-  margin-bottom: 1rem;
-}
-
 .fadeIn {
   animation-name: fadeIn;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 
@@ -20,3 +16,9 @@
     opacity: 1;
   }
 }
+
+.filmnumber {
+  margin-bottom: 1rem;
+}
+
+

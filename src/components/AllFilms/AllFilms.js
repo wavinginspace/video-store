@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import FilmLink from '../FilmLink/FilmLink';
 import ApiContext from '../../ApiContext';
 import '../FilmLink/FilmLink.scss';
@@ -18,22 +19,27 @@ export class AllFilms extends Component {
     return (
       <>
         <p className="filmnumber fadeIn">{numberFilms}</p>
-        <section className="AllFilms fadeIn box">
-          <ul>
-            {films
-              .sort(function(a, b) {
-                if (a.title < b.title) {
-                  return -1;
-                }
-                if (a.title > b.title) {
-                  return 1;
-                }
-                return 0;
-              })
-              .map(film => (
-                <FilmLink key={film.id} film={film} />
-              ))}
-          </ul>
+        <section className="AllFilms fadeIn">
+          <div className="box">
+            <ul>
+              {films
+                .sort(function(a, b) {
+                  if (a.title.toLowerCase() < b.title.toLowerCase()) {
+                    return -1;
+                  }
+                  if (a.title.toLowerCase() > b.title.toLowerCase()) {
+                    return 1;
+                  }
+                  return 0;
+                })
+                .map(film => (
+                  <FilmLink key={film.id} film={film} />
+                ))}
+            </ul>
+          </div>
+          <Link className="back-button" to="/">
+            <p className="back-button-p">Back to Homepage</p>
+          </Link>
         </section>
       </>
     );

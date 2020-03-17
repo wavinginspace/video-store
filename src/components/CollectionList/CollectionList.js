@@ -16,10 +16,10 @@ export class CollectionList extends Component {
           <ul className="collection-list box" aria-live="polite">
             {collections
               .sort(function(a, b) {
-                if (a.title < b.title) {
+                if (a.title.toLowerCase() < b.title.toLowerCase()) {
                   return -1;
                 }
-                if (a.title > b.title) {
+                if (a.title.toLowerCase() > b.title.toLowerCase()) {
                   return 1;
                 }
                 return 0;

@@ -3,6 +3,7 @@ import './FilmDetail.scss';
 import ApiContext from '../../ApiContext';
 import config from '../../config';
 import { findFilm } from '../../services/film-helpers';
+import { Link } from 'react-router-dom';
 
 class FilmDetail extends React.Component {
   constructor(props) {
@@ -69,41 +70,78 @@ class FilmDetail extends React.Component {
 
     return (
       <>
-      
         <div className="FilmDetail box fadeIn">
-          <p>Title: {film.title}</p>
-          <p>Collections: {this.state.collections} </p>
-          <p>Director: {film.director} </p>
-          <p>Writers: {film.writers} </p>
-          <p>Stars: {film.stars} </p>
-          <p>Year: {film.year_released} </p>
-          <p>Genre: {film.genre}</p>
-          <p>Format: {film.film_format} </p>
-          <p>Version: {film.film_version}</p>
-          <p>Rating: {film.film_rating}</p>
-          <p>Condition: {film.film_condition} </p>
-          <p>Value: {film.film_value} </p>
-          <p>Selling: {film.selling ? 'yes' : 'no'}</p>
           <p>
-            Trailer:
+            <span className="label">Title:</span> {film.title}
+          </p>
+          <p>
+            <span className="label">Collections:</span> {this.state.collections}{' '}
+          </p>
+          <p>
+            <span className="label">Director:</span> {film.director}{' '}
+          </p>
+          <p>
+            <span className="label">Writers:</span> {film.writers}{' '}
+          </p>
+          <p>
+            <span className="label">Stars:</span> {film.stars}{' '}
+          </p>
+          <p>
+            <span className="label">Year:</span> {film.year_released}{' '}
+          </p>
+          <p>
+            <span className="label">Genre:</span> {film.genre}
+          </p>
+          <p>
+            <span className="label">Format:</span> {film.film_format}{' '}
+          </p>
+          <p>
+            <span className="label">Version:</span> {film.film_version}
+          </p>
+          <p>
+            <span className="label">Rating:</span> {film.film_rating}
+          </p>
+          <p>
+            <span className="label">Condition:</span> {film.film_condition}{' '}
+          </p>
+          <p>
+            <span className="label">Value:</span> {film.film_value}{' '}
+          </p>
+          <p>
+            <span className="label">Selling:</span>{' '}
+            {film.selling ? 'Yes' : 'No'}
+          </p>
+          <p>
+            <span className="label">Trailer:</span>{' '}
             <a href={film.trailer} target="_blank" rel="noopener noreferrer">
-              Watch here
+              {' '}
+              Watch here{' '}
             </a>
           </p>
-          <p>Tags: {film.tags} </p>
-          <p>Notes: {film.notes} </p>
-          <p>Memorable Scenes: {film.memorable_scenes}</p>
-          <p>Date Added: {film.date_added}</p>
+          <p>
+            <span className="label">Tags:</span> {film.tags}{' '}
+          </p>
+          <p>
+            <span className="label">Notes:</span> {film.notes}{' '}
+          </p>
+          <p>
+            <span className="label">Memorable Scenes:</span>{' '}
+            {film.memorable_scenes}
+          </p>
+          <p>
+            <span className="label">Date Added:</span> {film.date_added}
+          </p>
           <button
             className="film-delete-button"
             onClick={this.handleClickDelete}
             type="button">
-            Delete
+            Delete Film
           </button>
         </div>
 
-        <button onClick={this.goBack}>Back</button>
-        
+        <Link className="back-button" to="/">
+          <p className="back-button-p">Back Home</p>
+        </Link>
       </>
     );
   }

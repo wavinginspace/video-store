@@ -1,11 +1,6 @@
 @import '../../styles/_breakpoints.scss';
 @import '../../styles/_variables.scss';
 
-.FilmDetail p {
-  margin: .5rem auto;
-  text-align: left;
-}
-
 .fadeIn {
   animation-name: fadeIn;
   animation-duration: .2s;
@@ -21,3 +16,30 @@
     opacity: 1;
   }
 }
+
+.FilmDetail p {
+  margin: .5rem auto;
+  text-align: left;
+}
+
+.label {
+  font-weight: 500;
+}
+
+.film-delete-button {
+  border: none;
+  transition: color 0.5s;
+  padding: 1rem 0 0;
+  width: 250px;
+  margin: 0 auto 0.5rem;
+  font-size: 0.8rem;
+}
+
+.film-delete-button:hover {
+  color: red;
+}
+
+// p {
+//   margin: 1.5rem auto;
+// }
+

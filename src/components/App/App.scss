@@ -69,3 +69,20 @@ p, a {
 button:hover {
   cursor: pointer;
 }
+
+.back-button {
+  text-decoration: none;
+  margin: 1rem;
+  color: var(--main);
+  
+}
+
+.back-button-p {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.back-button-p:hover {
+  color: blue;
+}

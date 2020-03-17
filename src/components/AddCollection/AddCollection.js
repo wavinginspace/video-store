@@ -60,7 +60,7 @@ class AddCollection extends Component {
       <div className="AddCollection fadeIn">
         <form className="box" onSubmit={e => this.handleSubmit(e)}>
           <label htmlFor="title">Title:</label>
-          <input type="text" name="title" onChange={e => this.updateField('title', e.target.value)}/>
+          <input type="text" name="title" autoComplete="off" onChange={e => this.updateField('title', e.target.value)}/>
           <label htmlFor="notes">Notes:</label>
           <textarea
             name="notes"
@@ -72,8 +72,8 @@ class AddCollection extends Component {
             Submit
           </button>
         </form>
-        <Link to="/">
-          <button>Back</button>
+        <Link className="back-button" to="/">
+          <p className="back-button-p">Back</p>
         </Link>
       </div>
     );

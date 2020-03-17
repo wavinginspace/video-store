@@ -37,7 +37,7 @@ textarea {
   margin: 0 auto;
   width: 60%;
   height: 50px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 #collections {
@@ -69,11 +69,11 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 .sellingcheckbox {
-  margin: 0.5rem 0.5rem 0;
+  margin: .5rem .5rem .5rem;
   display: block;
   width: 20px;
   height: 20px;
@@ -84,28 +84,15 @@ select {
   margin: 0;
 }
 
-.homelink {
-  text-decoration: none;
-  margin: 1rem;
-  color: var(--main);
-}
-
-.homelinkp {
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.homelinkp:hover {
-  color: blue;
-}
-
 .submit-button {
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--green);
+  border: 2px solid var(--main);
 }
 
 .submit-button:hover {
-  color: var(--buttonhov);
-  background-color: var(--green);
+  background-color: var(--buttonhov);
   font-weight: 500;
+  color: white;
 }
