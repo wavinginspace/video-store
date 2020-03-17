@@ -43,7 +43,15 @@ button {
 }
 
 p,
-label {
+label,
+select,
+button,
+option {
   font-family: 'Roboto Mono';
   color: var(--main);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--buttonhov);
 }

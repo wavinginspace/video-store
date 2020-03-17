@@ -1,9 +1,26 @@
 @import '../../styles/_breakpoints.scss';
 @import '../../styles/_variables.scss';
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
 label {
   display: block;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
+  font-weight: 500;
 }
 
 input {
@@ -27,11 +44,23 @@ textarea {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 1rem;
+  border: none;
+  outline: none;
 }
 
-#format {
+input[type='text'],
+input[type='url'],
+select {
+  font-size: 0.9rem;
+}
+
+.format-option {
+  font-family: monospace;
+}
+
+#film_format {
   margin: 0 auto;
-  width: 60%;
+  width: 100px;
   margin-bottom: 1rem;
 }
 
@@ -44,9 +73,10 @@ textarea {
 }
 
 .sellingcheckbox {
-  margin: 0 .5rem;
+  margin: 0.5rem 0.5rem 0;
   display: block;
-  width: 10px;
+  width: 20px;
+  height: 20px;
 }
 
 .sellinglabel {
@@ -70,18 +100,12 @@ textarea {
   color: blue;
 }
 
-.fadeIn {
-  animation-name: fadeIn;
-  animation-duration: .2s;
-  animation-fill-mode: forwards;
+.submit-button {
+  font-size: 0.8rem;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+.submit-button:hover {
+  color: var(--buttonhov);
+  background-color: var(--green);
+  font-weight: 500;
 }

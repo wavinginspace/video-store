@@ -18,6 +18,11 @@ h1 {
   letter-spacing: 2.5px;
   color: var(--main);
   margin-bottom: 1rem;
+  transition: color .5s ease; 
+}
+
+h1:hover {
+  color: var(--green);
 }
 
 .homelink {

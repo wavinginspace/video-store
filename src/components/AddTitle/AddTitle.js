@@ -143,6 +143,11 @@ class AddTitle extends Component {
   }
 
   render() {
+
+    const dropdownStyle = {
+      fontFamily: 'monospace'
+    }
+
     return (
       <div className="AddTitle fadeIn">
         <form className="box" onSubmit={e => this.handleSubmit(e)}>
@@ -150,10 +155,11 @@ class AddTitle extends Component {
           <input
             type="text"
             name="title"
+            autoComplete="off"
             onChange={e => this.updateField('title', e.target.value)}
             required
           />
-          <label htmlFor="collections">Collections:</label>
+          <label className="collections-label" htmlFor="collections">Collections:</label>
           <select
             name="collections"
             id="collections"
@@ -169,6 +175,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="director"
+            autoComplete="off"
             onChange={e => this.updateField('director', e.target.value)}
           />
 
@@ -176,6 +183,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="writers"
+            autoComplete="off"
             onChange={e => this.updateField('writers', e.target.value)}
           />
 
@@ -183,6 +191,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="stars"
+            autoComplete="off"
             onChange={e => this.updateField('stars', e.target.value)}
           />
 
@@ -190,6 +199,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="year_released"
+            autoComplete="off"
             onChange={e => this.updateField('year_released', e.target.value)}
           />
 
@@ -197,6 +207,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="genre"
+            autoComplete="off"
             onChange={e => this.updateField('genre', e.target.value)}
           />
 
@@ -204,6 +215,7 @@ class AddTitle extends Component {
           <select
             name="film_format"
             id="film_format"
+            autoComplete="off"
             onChange={e => this.updateField('film_format', e.target.value)}>
             <option value="Blu-ray">Blu-ray</option>
             <option value="Digital">Digital</option>
@@ -211,12 +223,14 @@ class AddTitle extends Component {
             <option value="Other">Other</option>
             <option value="Reel">Reel</option>
             <option value="VHS">VHS</option>
+            
           </select>
 
           <label htmlFor="film_version">Version:</label>
           <input
             type="text"
             name="film_version"
+            autoComplete="off"
             onChange={e => this.updateField('film_version', e.target.value)}
           />
 
@@ -224,6 +238,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="film_condition"
+            autoComplete="off"
             onChange={e => this.updateField('film_condition', e.target.value)}
           />
 
@@ -231,6 +246,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="film_value"
+            autoComplete="off"
             onChange={e => this.updateField('film_value', e.target.value)}
           />
 
@@ -238,6 +254,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="film_rating"
+            autoComplete="off"
             onChange={e => this.updateField('film_rating', e.target.value)}
           />
 
@@ -248,6 +265,7 @@ class AddTitle extends Component {
             <input
               type="checkbox"
               name="selling"
+              autoComplete="off"
               className="sellingcheckbox"
               onChange={e => this.updateField('selling', e.target.value)}
             />
@@ -257,6 +275,7 @@ class AddTitle extends Component {
           <input
             type="url"
             name="trailer"
+            autoComplete="off"
             onChange={e => this.updateField('trailer', e.target.value)}
           />
 
@@ -264,6 +283,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="tags"
+            autoComplete="off"
             onChange={e => this.updateField('tags', e.target.value)}
           />
 
@@ -271,17 +291,19 @@ class AddTitle extends Component {
           <textarea
             type="text"
             name="notes"
+            autoComplete="off"
             onChange={e => this.updateField('notes', e.target.value)}
           />
 
           <label htmlFor="memorable_scenes">Memorable Scenes:</label>
           <textarea
             type="text"
+            autoComplete="off"
             name="memorable_scenes"
             onChange={e => this.updateField('memorable_scenes', e.target.value)}
           />
 
-          <button type="submit">Submit</button>
+          <button className="submit-button" type="submit">Submit</button>
         </form>
 
         <Link to="/" className="homelink">
