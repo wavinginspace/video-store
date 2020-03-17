@@ -87,23 +87,35 @@ export class CollectionView extends Component {
       <section className="fadeIn">
         <h2>{collection.title}</h2>
         <p className="collection-notes">{collection.notes}</p>
+
         <p className="filmnumber">{numberFilms}</p>
         <div className="CollectionView box">
           <ul className="film-list" aria-live="polite">
-            {collectionFilms.map(film => (
-              <FilmLink key={film.id} film={film} />
-            ))}
+            {collectionFilms
+              .sort(function(a, b) {
+                if (a.title < b.title) {
+                  return -1;
+                }
+                if (a.title > b.title) {
+                  return 1;
+                }
+                return 0;
+              })
+              .map(film => (
+                <FilmLink key={film.id} film={film} />
+              ))}
           </ul>
-          <button
-            className="collection-delete-button"
-            onClick={this.handleClickDelete}
-            type="button">
-            Delete Collection
-          </button>
         </div>
         <Link to="/">
           <button>Back</button>
         </Link>
+
+        <button
+          className="collection-delete-button"
+          onClick={this.handleClickDelete}
+          type="button">
+          Delete Collection
+        </button>
       </section>
     );
   }

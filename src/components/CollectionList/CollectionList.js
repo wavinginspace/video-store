@@ -14,9 +14,19 @@ export class CollectionList extends Component {
         <h2 className="collections-header">Your Collections</h2>
         <section className="CollectionList">
           <ul className="collection-list box" aria-live="polite">
-            {collections.map(collection => (
-              <CollectionLink key={collection.id} collection={collection} />
-            ))}
+            {collections
+              .sort(function(a, b) {
+                if (a.title < b.title) {
+                  return -1;
+                }
+                if (a.title > b.title) {
+                  return 1;
+                }
+                return 0;
+              })
+              .map(collection => (
+                <CollectionLink key={collection.id} collection={collection} />
+              ))}
           </ul>
         </section>
       </>

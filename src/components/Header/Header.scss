@@ -12,7 +12,7 @@ p {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: 'Fredoka One', Lato, monospace;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -23,6 +23,12 @@ h1 {
 
 h1:hover {
   color: var(--green);
+}
+
+@include mobileLandscape {
+  h1 {
+    font-size: 4rem;
+  }
 }
 
 .homelink {

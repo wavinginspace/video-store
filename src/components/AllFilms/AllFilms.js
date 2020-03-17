@@ -20,9 +20,19 @@ export class AllFilms extends Component {
         <p className="filmnumber fadeIn">{numberFilms}</p>
         <section className="AllFilms fadeIn box">
           <ul>
-            {films.map(film => (
-              <FilmLink key={film.id} film={film} />
-            ))}
+            {films
+              .sort(function(a, b) {
+                if (a.title < b.title) {
+                  return -1;
+                }
+                if (a.title > b.title) {
+                  return 1;
+                }
+                return 0;
+              })
+              .map(film => (
+                <FilmLink key={film.id} film={film} />
+              ))}
           </ul>
         </section>
       </>
