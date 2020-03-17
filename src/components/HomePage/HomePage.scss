@@ -52,6 +52,11 @@ color: white;
   margin: 0 auto;
   text-align: center;
   text-decoration: none;
+  color: var(--main);
+}
+
+.all-films-link-p:hover,
+.all-films-link-p:active {
   color: var(--link);
 }
 
