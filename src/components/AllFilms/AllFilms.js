@@ -11,6 +11,16 @@ export class AllFilms extends Component {
   render() {
     const { films } = this.props;
 
+    let alphabetizedFilms = films.sort(function(a, b) {
+      if (a.title.toLowerCase() < b.title.toLowerCase()) {
+        return -1;
+      }
+      if (a.title.toLowerCase() > b.title.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+
     let numberFilms =
       this.context.films.length === 1
         ? `There is 1 film in your store.`
@@ -22,19 +32,9 @@ export class AllFilms extends Component {
         <section className="AllFilms fadeIn">
           <div className="box">
             <ul>
-              {films
-                .sort(function(a, b) {
-                  if (a.title.toLowerCase() < b.title.toLowerCase()) {
-                    return -1;
-                  }
-                  if (a.title.toLowerCase() > b.title.toLowerCase()) {
-                    return 1;
-                  }
-                  return 0;
-                })
-                .map(film => (
-                  <FilmLink key={film.id} film={film} />
-                ))}
+              {alphabetizedFilms.map(film => (
+                <FilmLink key={film.id} film={film} />
+              ))}
             </ul>
           </div>
           <Link className="back-button" to="/">

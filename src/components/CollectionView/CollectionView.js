@@ -61,7 +61,7 @@ export class CollectionView extends Component {
       }
     })
       .then(() => {
-        this.setState({loading: true})
+        this.setState({ loading: true });
         this.context.deleteCollection(parseInt(collection_id));
         this.goBack();
       })
@@ -77,7 +77,17 @@ export class CollectionView extends Component {
     let { id } = this.props.match.params;
 
     const collection = findCollection(collections, id) || { content: '' };
-    const collectionFilms = this.state.collection_films;
+    const alphabetizedCollectionFilms = this.state.collection_films.sort(
+      function(a, b) {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) {
+          return -1;
+        }
+        if (a.title.toLowerCase() > b.title.toLowerCase()) {
+          return 1;
+        }
+        return 0;
+      }
+    );
 
     let numberFilms =
       this.state.collection_films.length === 1
@@ -94,19 +104,9 @@ export class CollectionView extends Component {
         <p className="filmnumber">{numberFilms}</p>
         <div className="CollectionView box">
           <ul className="film-list" aria-live="polite">
-            {collectionFilms
-              .sort(function(a, b) {
-                if (a.title.toLowerCase() < b.title.toLowerCase()) {
-                  return -1;
-                }
-                if (a.title.toLowerCase() > b.title.toLowerCase()) {
-                  return 1;
-                }
-                return 0;
-              })
-              .map(film => (
-                <FilmLink key={film.id} film={film} />
-              ))}
+            {alphabetizedCollectionFilms.map(film => (
+              <FilmLink key={film.id} film={film} />
+            ))}
           </ul>
           <button
             className="collection-delete-button"

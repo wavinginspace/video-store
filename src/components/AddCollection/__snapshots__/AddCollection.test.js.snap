@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="AddCollection fadeIn"
+>
+  <form
+    className="box"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="title"
+    >
+      Title:
+    </label>
+    <input
+      autoComplete="off"
+      name="title"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      htmlFor="notes"
+    >
+      Notes:
+    </label>
+    <textarea
+      cols="30"
+      id="collection-notes"
+      name="notes"
+      onChange={[Function]}
+      rows="10"
+    />
+    <button
+      className="submit-button"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+  <a
+    className="back-button"
+    href="/"
+    onClick={[Function]}
+  >
+    <p
+      className="back-button-p"
+    >
+      Back
+    </p>
+  </a>
+</div>
+`;
