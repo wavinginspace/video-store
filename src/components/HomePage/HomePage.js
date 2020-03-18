@@ -20,7 +20,16 @@ export class HomePage extends Component {
 
     return (
       <div className="HomePage fadeIn">
-        <p className="storecount">{numberFilms}{numberCollections}</p>
+        <img
+          className="vcr"
+          alt="vcr illustration"
+          src={require('../../images/vhs.svg')}
+        />
+
+        <p className="storecount">
+          {numberFilms}
+          {numberCollections}
+        </p>
         <div className="new-links">
           <Link to="/add-title" className="new-title link">
             Add Title

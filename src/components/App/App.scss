@@ -25,9 +25,24 @@
 
 main {
   font-family: Arial;
-  font-size: 16px;
-  padding: 1rem;
+  padding: .5rem;
   color: var(--main);
+}
+
+@include mobilePortrait {
+  main {
+    padding: 1rem;
+  }
+}
+
+p { 
+  font-size: 14px;
+}
+
+@include mobilePortrait {
+  p {
+    font-size: 16px;
+  }
 }
 
 button {
@@ -74,15 +89,21 @@ button:hover {
   text-decoration: none;
   margin: 1rem;
   color: var(--main);
-  
 }
 
 .back-button-p {
   margin: 0 auto;
   text-align: center;
   padding-bottom: 3rem;
+  max-width: 100px;
+}
+
+.back-button:hover {
+  cursor: default;
 }
 
 .back-button-p:hover {
   color: blue;
+  font-weight: 500;
+  cursor: pointer;
 }

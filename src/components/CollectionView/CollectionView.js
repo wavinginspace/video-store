@@ -61,6 +61,7 @@ export class CollectionView extends Component {
       }
     })
       .then(() => {
+        this.setState({loading: true})
         this.context.deleteCollection(parseInt(collection_id));
         this.goBack();
       })

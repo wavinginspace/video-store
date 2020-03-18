@@ -32,6 +32,21 @@
   background-color: var(--buttonhov);
 }
 
+@include tabletPortrait {
+  .new-links {
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .new-title, .new-collection {
+    margin: 0 1.5rem;
+  }
+
+
+}
+
 .new-links a {
   transition: color .1s ease;
 }
@@ -45,7 +60,14 @@ color: white;
 }
 
 .storecount {
-  margin-bottom: 1rem;
+  margin: 1rem 0;;
+  padding: 0 2rem;
+}
+
+@include mobileLandscape {
+  .storecount {
+    margin: 0 0 1rem;
+  }
 }
 
 .all-films-link {
@@ -78,4 +100,20 @@ color: white;
 
 p {
   font-family: 'Roboto Mono'
+}
+
+
+.vcr {
+  display: block;
+  width: 150px;
+  margin: -3.5rem auto -2rem;
+  padding: 0;
+  text-align: center;
+}
+
+@include mobileLandscape {
+  .vcr {
+    width: 200px;
+    margin: -4rem auto -1.5rem;
+  }
 }
