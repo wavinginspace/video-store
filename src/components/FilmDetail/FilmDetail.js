@@ -35,7 +35,7 @@ class FilmDetail extends React.Component {
       .then(res => res.json())
       .then(data =>
         this.setState({
-          collections: data.collections.split(',').join(', '),
+          collections: data.collections ? data.collections.split(',').join(', ') : '',
           loading: false
         })
       );
@@ -115,7 +115,7 @@ class FilmDetail extends React.Component {
             <span className="label">Trailer:</span>{' '}
             <a className="trailer-link" href={film.trailer} target="_blank" rel="noopener noreferrer">
               {' '}
-              Link{' '}
+              {film.trailer ? 'Link' : ''}{' '}
             </a>
           </p>
           <p>

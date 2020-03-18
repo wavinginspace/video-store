@@ -36,7 +36,7 @@ form {
 textarea {
   margin: 0 auto;
   width: 60%;
-  height: 50px;
+  // height: 50px;
   margin-bottom: 1.5rem;
 }
 
@@ -45,13 +45,32 @@ textarea {
   text-align: center;
   margin-bottom: 1rem;
   border: none;
-  outline: none;
+}
+
+.collection-option:hover {
+  cursor: pointer;
+}
+
+.collections-note {
+  font-size: 0.7rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
 input[type='text'],
 input[type='url'],
 select {
   font-size: 0.9rem;
+}
+
+.input::placeholder {
+  font-style: italic;
+  text-align: center;
+  opacity: 50%;
+}
+
+.input.trailer {
+  font-size: .8rem;
 }
 
 .format-option {
@@ -73,7 +92,7 @@ select {
 }
 
 .sellingcheckbox {
-  margin: .5rem .5rem .5rem;
+  margin: 0.5rem 0.5rem 0.5rem;
   display: block;
   width: 20px;
   height: 20px;
@@ -97,12 +116,14 @@ select {
   color: white;
 }
 
-.collection-option:hover {
-  cursor: pointer;
+.memorable-scenes {
+  margin-bottom: 2rem;
 }
 
-.collections-note {
-  font-size: .7rem;
-  font-style: italic;
-  margin-bottom: .5rem;
+.smaller {
+  width: 180px;
+}
+
+.smallest {
+  width: 60px;
 }
