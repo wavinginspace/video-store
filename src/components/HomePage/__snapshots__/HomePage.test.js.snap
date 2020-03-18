@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="HomePage fadeIn"
+>
+  <a
+    href="/films"
+    onClick={[Function]}
+  >
+    <img
+      alt="vcr illustration"
+      className="vcr"
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "vhs.svg",
+        }
+      }
+    />
+  </a>
+  <p
+    className="storecount"
+  >
+    There are 0 films and 
+    0 collections in your store.
+  </p>
+  <div
+    className="new-links"
+  >
+    <a
+      className="new-title link"
+      href="/add-title"
+      onClick={[Function]}
+    >
+      Add Title
+    </a>
+    <a
+      className="new-collection link"
+      href="/add-collection"
+      onClick={[Function]}
+    >
+      Add Collection
+    </a>
+  </div>
+  <h2
+    className="collections-header"
+  >
+    Your Collections
+  </h2>
+  <section
+    className="CollectionList"
+  >
+    <ul
+      aria-live="polite"
+      className="collection-list box"
+    />
+  </section>
+  <a
+    className="all-films-link"
+    href="/films"
+    onClick={[Function]}
+  >
+    <p
+      className="all-films-link-p"
+    >
+      View all films
+    </p>
+  </a>
+</div>
+`;

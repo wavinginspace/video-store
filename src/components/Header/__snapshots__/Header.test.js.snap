@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="Header"
+>
+  <header>
+    <a
+      className="homelink"
+      href="/"
+      onClick={[Function]}
+    >
+      <h1>
+        Video Store
+      </h1>
+    </a>
+    <p>
+      Welcome to Video Store! Your personal film collection assistant.
+    </p>
+  </header>
+</div>
+`;
