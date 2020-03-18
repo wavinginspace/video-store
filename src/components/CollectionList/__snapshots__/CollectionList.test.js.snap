@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+Array [
+  <h2
+    className="collections-header"
+  >
+    Your Collections
+  </h2>,
+  <section
+    className="CollectionList"
+  >
+    <ul
+      aria-live="polite"
+      className="collection-list box"
+    />
+  </section>,
+]
+`;
