@@ -25,6 +25,7 @@
   display: block;
   padding: 0.8rem;
   width: 200px;
+  // border: 2px solid var(--main);
 }
 
 .new-title:hover,
@@ -92,6 +93,7 @@
 .all-films-link-p:hover,
 .all-films-link-p:active {
   color: var(--link);
+  font-weight: 500;
 }
 
 .fadeIn {

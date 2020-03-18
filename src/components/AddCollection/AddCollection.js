@@ -68,7 +68,7 @@ class AddCollection extends Component {
             cols="30"
             rows="10"
             onChange={e => this.updateField('notes', e.target.value)}></textarea>
-          <button type="submit" className="add-collection button">
+          <button type="submit" className="submit-button">
             Submit
           </button>
         </form>

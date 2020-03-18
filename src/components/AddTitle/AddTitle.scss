@@ -69,6 +69,14 @@ select {
   opacity: 50%;
 }
 
+.input {
+  text-align: center;
+}
+
+.input, textarea {
+  border: 1px solid rgba(0, 0, 0, .25);
+}
+
 .input.trailer {
   font-size: .8rem;
 }
@@ -101,19 +109,6 @@ select {
 .sellinglabel {
   display: inline-block;
   margin: 0;
-}
-
-.submit-button {
-  font-size: 1rem;
-  font-weight: 500;
-  background-color: var(--green);
-  border: 2px solid var(--main);
-}
-
-.submit-button:hover {
-  background-color: var(--buttonhov);
-  font-weight: 500;
-  color: white;
 }
 
 .memorable-scenes {
