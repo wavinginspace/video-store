@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+Array [
+  <p
+    className="filmnumber fadeIn"
+  >
+    There are 0 films in your store.
+  </p>,
+  <section
+    className="AllFilms fadeIn"
+  >
+    <div
+      className="box"
+    >
+      <ul />
+    </div>
+    <a
+      className="back-button"
+      href="/"
+      onClick={[Function]}
+    >
+      <p
+        className="back-button-p"
+      >
+        Back Home
+      </p>
+    </a>
+  </section>,
+]
+`;

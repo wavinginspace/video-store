@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { MemoryRouter as Router} from 'react-router-dom';
-import AllFilms from './AllFilms';
+import CollectionLink from './CollectionLink';
 import renderer from 'react-test-renderer';
 
 it('renders without crashing', () => {
@@ -9,13 +9,13 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
 
   // render the component, this is the actual test, if something is wrong it will fail here
-  ReactDOM.render(<Router><AllFilms films={[]}/></Router>, div);
+  ReactDOM.render(<Router><CollectionLink key='test' collection='test'/></Router>, div);
 
   // clean up code
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('renders the UI as expected', () => {
-  const tree = renderer.create(<Router><AllFilms films={[]}/></Router>).toJSON();
+  const tree = renderer.create(<Router><CollectionLink key='test' collection='test'/></Router>).toJSON();
   expect(tree).toMatchSnapshot();
 });
