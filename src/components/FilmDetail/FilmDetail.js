@@ -113,9 +113,9 @@ class FilmDetail extends React.Component {
           </p>
           <p>
             <span className="label">Trailer:</span>{' '}
-            <a href={film.trailer} target="_blank" rel="noopener noreferrer">
+            <a className="trailer-link" href={film.trailer} target="_blank" rel="noopener noreferrer">
               {' '}
-              Watch here{' '}
+              Link{' '}
             </a>
           </p>
           <p>

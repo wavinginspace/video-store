@@ -38,7 +38,7 @@ export class AllFilms extends Component {
             </ul>
           </div>
           <Link className="back-button" to="/">
-            <p className="back-button-p">Back to Homepage</p>
+            <p className="back-button-p">Back Home</p>
           </Link>
         </section>
       </>

@@ -20,11 +20,13 @@ export class HomePage extends Component {
 
     return (
       <div className="HomePage fadeIn">
-        <img
-          className="vcr"
-          alt="vcr illustration"
-          src={require('../../images/vhs.svg')}
-        />
+        <Link to="/films">
+          <img
+            className="vcr"
+            alt="vcr illustration"
+            src={require('../../images/vhs.svg')}
+          />
+        </Link>
 
         <p className="storecount">
           {numberFilms}

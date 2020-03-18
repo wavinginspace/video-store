@@ -96,3 +96,13 @@ select {
   font-weight: 500;
   color: white;
 }
+
+.collection-option:hover {
+  cursor: pointer;
+}
+
+.collections-note {
+  font-size: .7rem;
+  font-style: italic;
+  margin-bottom: .5rem;
+}

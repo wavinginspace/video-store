@@ -50,7 +50,7 @@ class AddTitle extends Component {
     const { collections = [] } = this.context;
     return collections.map(collection => {
       return (
-        <option key={collection.id} id={collection.id} value={collection.id}>
+        <option key={collection.id} id={collection.id} className="collection-option" value={collection.id}>
           {collection.title}
         </option>
       );
@@ -161,10 +161,12 @@ class AddTitle extends Component {
           <label className="collections-label" htmlFor="collections">
             Collections:
           </label>
+          <p className="collections-note">* hold cmd to select multiple</p>
           <select
             name="collections"
             id="collections"
             multiple
+            size="4"
             value={this.state.selected_collections}
             onChange={e => {
               this.updateSelectedCollection(e.target);
@@ -311,7 +313,7 @@ class AddTitle extends Component {
         </form>
 
         <Link to="/" className="back-button">
-          <p className="back-button-p">back to collections</p>
+          <p className="back-button-p">Back Home</p>
         </Link>
       </div>
     );

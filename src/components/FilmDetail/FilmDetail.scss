@@ -3,7 +3,7 @@
 
 .fadeIn {
   animation-name: fadeIn;
-  animation-duration: .2s;
+  animation-duration: 0.2s;
   animation-fill-mode: forwards;
 }
 
@@ -18,12 +18,20 @@
 }
 
 .FilmDetail p {
-  margin: .5rem auto;
+  margin: 0.5rem auto;
   text-align: left;
 }
 
 .label {
   font-weight: 500;
+}
+
+.trailer-link {
+  color: var(--main);
+}
+
+.trailer-link:hover {
+  color: blue;
 }
 
 .film-delete-button {
@@ -37,9 +45,5 @@
 
 .film-delete-button:hover {
   color: red;
+  font-weight: 500;
 }
-
-// p {
-//   margin: 1.5rem auto;
-// }
-
