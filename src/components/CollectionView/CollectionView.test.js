@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CollectionList from './CollectionList';
+import { MemoryRouter as Router} from 'react-router-dom';
+import CollectionView from './CollectionView';
 import renderer from 'react-test-renderer';
 
 it('renders without crashing', () => {
@@ -8,13 +9,13 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
 
   // render the component, this is the actual test, if something is wrong it will fail here
-  ReactDOM.render(<CollectionList collections={[]} />, div);
+  ReactDOM.render(<Router><CollectionView collections={[]} id='test' /></Router>, div);
 
   // clean up code
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('renders the UI as expected', () => {
-  const tree = renderer.create(<CollectionList collections={[]} />).toJSON();
+  const tree = renderer.create(<Router><CollectionView collections={[]} id='test'/></Router>).toJSON();
   expect(tree).toMatchSnapshot();
 });
