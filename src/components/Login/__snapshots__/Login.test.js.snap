@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="Login box"
+>
+  <form
+    action=""
+    className="login-form"
+    name="login-form"
+  >
+    <label
+      htmlFor="email"
+    >
+      Email:
+    </label>
+    <input
+      className="login-input"
+      name="email"
+      type="email"
+    />
+    <label
+      htmlFor="email"
+    >
+      Password:
+    </label>
+    <input
+      className="login-input"
+      name="loginpassword"
+      type="password"
+    />
+    <button
+      className="login button"
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</div>
+`;

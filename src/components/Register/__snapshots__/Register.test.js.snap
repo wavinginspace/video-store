@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+Array [
+  <h2>
+    Register
+  </h2>,
+  <div
+    className="Register box"
+  >
+    <form
+      action=""
+      className="register-form"
+      name="register-form"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email:
+      </label>
+      <input
+        className="register-input"
+        name="email"
+        type="email"
+      />
+      <label
+        htmlFor="email"
+      >
+        Password:
+      </label>
+      <input
+        className="register-input"
+        name="password"
+        type="password"
+      />
+      <label
+        htmlFor="email"
+      >
+        Confirm Password:
+      </label>
+      <input
+        className="register-input"
+        name="passwordconfirm"
+        type="password"
+      />
+      <button
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>,
+]
+`;

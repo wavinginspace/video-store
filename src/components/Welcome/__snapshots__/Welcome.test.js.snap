@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<nav
+  className="Welcome box"
+>
+  <a
+    href="/login"
+    onClick={[Function]}
+  >
+    <button
+      className="welcome button"
+    >
+      Login
+    </button>
+  </a>
+  <a
+    href="/register"
+    onClick={[Function]}
+  >
+    <button
+      className="welcome button"
+    >
+      Register
+    </button>
+  </a>
+</nav>
+`;
