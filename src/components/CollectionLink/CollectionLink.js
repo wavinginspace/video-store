@@ -4,9 +4,13 @@ import './CollectionLink.scss';
 
 function CollectionLink(props) {
   return (
-    <Link to={`/collections/${props.collection.id}`} className="collection-link">
-      <li className="CollectionLink">{props.collection.title}</li>
-    </Link>
+    <li className="CollectionLink">
+      <Link
+        to={`/collections/${props.collection.id}`}
+        className="collection-link">
+        {props.collection.title}
+      </Link>
+    </li>
   );
 }
 

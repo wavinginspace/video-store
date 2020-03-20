@@ -140,7 +140,7 @@ class FilmDetail extends React.Component {
         </div>
 
         <Link className="back-button" to="/">
-          <p className="back-button-p">Back Home</p>
+          <p className="back-button-p">Back</p>
         </Link>
       </>
     );

@@ -44,13 +44,17 @@ class AddTitle extends Component {
     const { collections = [] } = this.context;
     return collections.map(collection => {
       return (
-        <option key={collection.id} id={collection.id} className="collection-option" value={collection.id}>
+        <option
+          key={collection.id}
+          id={collection.id}
+          className="collection-option"
+          value={collection.id}>
           {collection.title}
         </option>
       );
     });
   }
-  
+
   updateSelectedCollection(select) {
     let result = [];
     let options = select && select.options;
@@ -135,7 +139,6 @@ class AddTitle extends Component {
   }
 
   render() {
-    
     return (
       <div className="AddTitle fadeIn">
         <form className="box" onSubmit={e => this.handleSubmit(e)}>
@@ -151,7 +154,9 @@ class AddTitle extends Component {
           <label className="collections-label" htmlFor="collections">
             Collections:
           </label>
-          <p className="collections-note">* hold cmd to select multiple collections</p>
+          <p className="collections-note">
+            * hold cmd to select multiple collections
+          </p>
           <select
             name="collections"
             id="collections"
@@ -215,12 +220,12 @@ class AddTitle extends Component {
             id="film_format"
             autoComplete="off"
             onChange={e => this.updateField('film_format', e.target.value)}>
+            <option value="VHS">VHS</option>
             <option value="Blu-ray">Blu-ray</option>
             <option value="Digital">Digital</option>
             <option value="DVD">DVD</option>
+            <option value="Film">Film</option>
             <option value="Other">Other</option>
-            <option value="Reel">Reel</option>
-            <option value="VHS">VHS</option>
           </select>
 
           <label htmlFor="film_version">Version:</label>
@@ -288,7 +293,7 @@ class AddTitle extends Component {
           <input
             type="text"
             name="tags"
-            className="input smaller"
+            className="input"
             autoComplete="off"
             onChange={e => this.updateField('tags', e.target.value)}
           />
@@ -318,7 +323,7 @@ class AddTitle extends Component {
         </form>
 
         <Link to="/" className="back-button">
-          <p className="back-button-p">Back Home</p>
+          <p className="back-button-p">Back</p>
         </Link>
       </div>
     );

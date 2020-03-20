@@ -112,6 +112,11 @@ exports[`renders the UI as expected 1`] = `
       onChange={[Function]}
     >
       <option
+        value="VHS"
+      >
+        VHS
+      </option>
+      <option
         value="Blu-ray"
       >
         Blu-ray
@@ -127,19 +132,14 @@ exports[`renders the UI as expected 1`] = `
         DVD
       </option>
       <option
+        value="Film"
+      >
+        Film
+      </option>
+      <option
         value="Other"
       >
         Other
-      </option>
-      <option
-        value="Reel"
-      >
-        Reel
-      </option>
-      <option
-        value="VHS"
-      >
-        VHS
       </option>
     </select>
     <label
@@ -229,7 +229,7 @@ exports[`renders the UI as expected 1`] = `
     </label>
     <input
       autoComplete="off"
-      className="input smaller"
+      className="input"
       name="tags"
       onChange={[Function]}
       type="text"
@@ -274,7 +274,7 @@ exports[`renders the UI as expected 1`] = `
     <p
       className="back-button-p"
     >
-      Back Home
+      Back
     </p>
   </a>
 </div>

@@ -10,7 +10,7 @@ import AddCollection from '../AddCollection/AddCollection';
 import CollectionView from '../CollectionView/CollectionView';
 import FilmDetail from '../FilmDetail/FilmDetail';
 import AllFilms from '../AllFilms/AllFilms';
-import { Route, Switch, HashRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 import ApiContext from '../../ApiContext';
 
@@ -85,42 +85,36 @@ export class App extends Component {
     return (
       <ApiContext.Provider value={value}>
         <div className="App fadeIn">
-          <HashRouter basename="/">
-            <Header />
-            <main className="App-main fadeIn">
-              <Switch>
-                {this.state.loggedIn ? (
-                  <Route
-                    exact
-                    path={'/'}
-                    render={props => (
-                      <HomePage {...props} films={this.state.films} />
-                    )}
-                  />
-                ) : (
-                  <Route exact path={'/'} component={Welcome} />
-                )}
-                <Route exact path={'/login'} component={Login} />
-                <Route exact path={'/register'} component={Register} />
-                <Route exact path={'/add-title'} component={AddTitle} />
+          <Header />
+          <main className="App-main fadeIn">
+            <Switch>
+              {this.state.loggedIn ? (
                 <Route
                   exact
-                  path={'/add-collection'}
-                  component={AddCollection}
-                />
-                <Route exact path={'/collections'} component={Welcome} />
-                <Route path={'/collections/:id'} component={CollectionView} />
-                <Route path={'/films/:id'} component={FilmDetail} />
-                <Route
-                  exact
-                  path={'/films'}
+                  path={'/'}
                   render={props => (
-                    <AllFilms {...props} films={this.state.films} />
+                    <HomePage {...props} films={this.state.films} />
                   )}
                 />
-              </Switch>
-            </main>
-          </HashRouter>
+              ) : (
+                <Route exact path={'/'} component={Welcome} />
+              )}
+              <Route exact path={'/login'} component={Login} />
+              <Route exact path={'/register'} component={Register} />
+              <Route exact path={'/add-title'} component={AddTitle} />
+              <Route exact path={'/add-collection'} component={AddCollection} />
+              <Route exact path={'/collections'} component={Welcome} />
+              <Route path={'/collections/:id'} component={CollectionView} />
+              <Route path={'/films/:id'} component={FilmDetail} />
+              <Route
+                exact
+                path={'/films'}
+                render={props => (
+                  <AllFilms {...props} films={this.state.films} />
+                )}
+              />
+            </Switch>
+          </main>
         </div>
       </ApiContext.Provider>
     );

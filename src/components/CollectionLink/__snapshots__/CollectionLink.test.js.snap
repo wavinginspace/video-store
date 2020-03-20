@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the UI as expected 1`] = `
-<a
-  className="collection-link"
-  href="/collections/undefined"
-  onClick={[Function]}
+<li
+  className="CollectionLink"
 >
-  <li
-    className="CollectionLink"
+  <a
+    className="collection-link"
+    href="/collections/undefined"
+    onClick={[Function]}
   />
-</a>
+</li>
 `;
