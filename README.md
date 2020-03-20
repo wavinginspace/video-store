@@ -12,23 +12,23 @@ Try it out! - https://video-store.now.sh/
 
 Users can add any number of films along with optional additional information for each title:
 
-**Title** - Title of the film.
-**Collections** - Which collection(s) the film belongs in. Multiple collections can be selected.
-**Director** - Director(s) of the film.
-**Writers** - Writer(s) of the film script/screenplay.
-**Stars** - Notable/featured actors in the film.
-**Year Released** - Year that film was released.
-**Genre** - Film genre(s).
-**Format** - Format of title (ie. DVD, VHS, digital, etc)
-**Version** - Version of title (ie. Original, Director's Cut, Italian dubbed, bootleg, etc)
-**Condition** - Physical condition of title (useful for selling films).
-**Value** - Value of title (useful for selling films).
-**Rating** - Rating of film on scale of user's choice (ie. 10/10, Five Stars, 2 Thumbs Up, 97)
-**Selling** - Check if marking title for sale.
-**Trailer** - URL input for link to title trailer.
-**Tags** - Custom tags for title (ie. Scary, Funny, Sad)
-**Notes** - Additional notes on film/title.
-**Memorable Scenes** - Memorable scenes from the film.
+**Title** - Title of the film.   
+**Collections** - Which collection(s) the film belongs in. Multiple collections can be selected.    
+**Director** - Director(s) of the film.  
+**Writers** - Writer(s) of the film script/screenplay.  
+**Stars** - Notable/featured actors in the film.  
+**Year Released** - Year that film was released.  
+**Genre** - Film genre(s).  
+**Format** - Format of title (ie. DVD, VHS, digital, etc).      
+**Version** - Version of title (ie. Original, Director's Cut, Italian dubbed, bootleg, etc).      
+**Condition** - Physical condition of title (useful for selling films).  
+**Value** - Value of title (useful for selling films).  
+**Rating** - Rating of film on scale of user's choice (ie. 10/10, Five Stars, 2 Thumbs Up, 97).  
+**Selling** - Check if marking title for sale.  
+**Trailer** - URL input for link to title trailer.  
+**Tags** - Custom tags for title (ie. Scary, Funny, Sad).  
+**Notes** - Additional notes on film/title.  
+**Memorable Scenes** - Memorable scenes from the film.  
 
 # Add Collection
 
