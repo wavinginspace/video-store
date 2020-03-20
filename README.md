@@ -12,7 +12,8 @@ Users can add any number of films along with optional additional information for
 
 ![Add Title](./src/images/screenshots/addtitle.png)  
 
-  
+    
+
 
 **Title** - Title of the film.   
 **Collections** - Which collection(s) the film belongs in. Multiple collections can be selected.    
@@ -62,10 +63,10 @@ Clicking on 'View all films' or the VCR graphic allows user to view all films in
 React with React Router + Context, JS ES6, SCSS
 
 ### Back-end
-Node.js w/ Express, PostgreSQL, Knex
+Node.js w/ Express, PostgreSQL, Knex, Postgrator
 
 ### Testing
-Mocha, Chai, Jest
+Mocha, Chai, Jest, Supertest
 
 ### Deployment
 Zeit, Heroku
