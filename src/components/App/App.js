@@ -103,7 +103,7 @@ export class App extends Component {
               <Route exact path={'/register'} component={Register} />
               <Route exact path={'/add-title'} component={AddTitle} />
               <Route exact path={'/add-collection'} component={AddCollection} />
-              <Route exact path={'/collections'} component={Welcome} />
+              <Route exact path={'/collections'} component={HomePage} />
               <Route path={'/collections/:id'} component={CollectionView} />
               <Route path={'/films/:id'} component={FilmDetail} />
               <Route
