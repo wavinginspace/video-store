@@ -50,9 +50,7 @@ class AddTitle extends Component {
       );
     });
   }
-
-  // TODO this is not updating state correctly.
-
+  
   updateSelectedCollection(select) {
     let result = [];
     let options = select && select.options;

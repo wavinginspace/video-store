@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/App/App';
-import './index.scss';
+// import './index.scss';
 import WebfontLoader from '@dr-kobros/react-webfont-loader';
 
 const config = {

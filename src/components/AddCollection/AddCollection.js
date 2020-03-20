@@ -27,7 +27,6 @@ class AddCollection extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // const date = new Date();
     const { title, notes } = this.state;
 
     const data = {

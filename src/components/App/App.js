@@ -10,7 +10,7 @@ import AddCollection from '../AddCollection/AddCollection';
 import CollectionView from '../CollectionView/CollectionView';
 import FilmDetail from '../FilmDetail/FilmDetail';
 import AllFilms from '../AllFilms/AllFilms';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, HashRouter } from 'react-router-dom';
 import './App.scss';
 import ApiContext from '../../ApiContext';
 
@@ -90,6 +90,7 @@ export class App extends Component {
         <div className="App fadeIn">
           <Header />
           <main className="App-main fadeIn">
+          <HashRouter basename="/"> 
             <Switch>
               {this.state.loggedIn ? (
                 <Route exact path={'/'} render={props => (
@@ -112,6 +113,7 @@ export class App extends Component {
                 )}
               />
             </Switch>
+            </HashRouter>
           </main>
         </div>
       </ApiContext.Provider>
