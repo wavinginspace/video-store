@@ -1,68 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Video Store
 
-## Available Scripts
+Video Store is an app for managing your personal film collection. Users can add film titles and collections, with any number of films belonging to any number of collections. Built with film collectors, fans, archivists and sellers/traders in mind.
 
-In the project directory, you can run:
+![Home Page](./src/images/screenshots/home.png)
 
-### `npm start`
+Try it out! - https://video-store.now.sh/
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Add Title
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Add Title](./src/images/screenshots/addtitle.png)
 
-### `npm test`
+Users can add any number of films along with optional additional information for each title:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Title** - Title of the film.
+**Collections** - Which collection(s) the film belongs in. Multiple collections can be selected.
+**Director** - Director(s) of the film.
+**Writers** - Writer(s) of the film script/screenplay.
+**Stars** - Notable/featured actors in the film.
+**Year Released** - Year that film was released.
+**Genre** - Film genre(s).
+**Format** - Format of title (ie. DVD, VHS, digital, etc)
+**Version** - Version of title (ie. Original, Director's Cut, Italian dubbed, bootleg, etc)
+**Condition** - Physical condition of title (useful for selling films).
+**Value** - Value of title (useful for selling films).
+**Rating** - Rating of film on scale of user's choice (ie. 10/10, Five Stars, 2 Thumbs Up, 97)
+**Selling** - Check if marking title for sale.
+**Trailer** - URL input for link to title trailer.
+**Tags** - Custom tags for title (ie. Scary, Funny, Sad)
+**Notes** - Additional notes on film/title.
+**Memorable Scenes** - Memorable scenes from the film.
 
-### `npm run build`
+# Add Collection
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Users can add any number of collections along with optional notes for each title.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Add Collection](./src/images/screenshots/addcollection.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Film View
 
-### `npm run eject`
+Clicking on a film links to a card displaying all of the information entered for that film.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Film Details](./src/images/screenshots/filmdetail.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Collection View
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Clicking on a collection links to a page displaying all of the films in that collection.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Collection View](./src/images/screenshots/addcollection.png)
 
-## Learn More
+## All films
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Clicking on 'View all films' or the VCR graphic allows user to view all films in their library or 'store'.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![All Films](./src/images/screenshots/allfilms.png)
 
-### Code Splitting
+## Technology Used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Front-end
+React with React Router + Context, JS ES6, SCSS
 
-### Analyzing the Bundle Size
+### Back-end
+Node.js w/ Express, PostgreSQL, Knex
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Testing
+Mocha, Chai, Jest
 
 ### Deployment
+Zeit, Heroku
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
