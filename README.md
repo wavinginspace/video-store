@@ -71,6 +71,9 @@ Mocha, Chai, Jest, Supertest
 ### Deployment
 Zeit, Heroku
 
+--------------
+
+*Paul Baisley 2020*
 
 
 
