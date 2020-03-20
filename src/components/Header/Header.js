@@ -10,7 +10,6 @@ export class Header extends Component {
   }
 
   componentDidMount() {
-    
     this.setState({
       loading: false
     })
@@ -20,7 +19,6 @@ export class Header extends Component {
     if (this.state.loading) {
       return <></>
     }
-
 
     return (
       <div className="Header">
