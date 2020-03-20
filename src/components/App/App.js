@@ -23,10 +23,9 @@ export class App extends Component {
   };
 
   componentDidMount() {
-
     this.setState({
       loading: true
-    })
+    });
 
     Promise.all([
       fetch(`${config.API_ENDPOINT}/api/films`),
@@ -64,7 +63,7 @@ export class App extends Component {
   handleDeleteCollection = collectionId => {
     this.setState({
       collections: this.state.collections.filter(x => x.id !== collectionId)
-    })
+    });
   };
 
   render() {
@@ -80,41 +79,48 @@ export class App extends Component {
     // give fetch time to populate context before returning components
 
     if (this.state.loading) {
-      return (
-        <></>
-      )
+      return <></>;
     }
 
     return (
       <ApiContext.Provider value={value}>
         <div className="App fadeIn">
-          <Header />
-          <main className="App-main fadeIn">
-          <HashRouter basename="/"> 
-            <Switch>
-              {this.state.loggedIn ? (
-                <Route exact path={'/'} render={props => (
-                  <HomePage {...props} films={this.state.films} />
-              )}/>) : (
-                <Route exact path={'/'} component={Welcome} />
-              )}
-              <Route exact path={'/login'} component={Login} />
-              <Route exact path={'/register'} component={Register} />
-              <Route exact path={'/add-title'} component={AddTitle} />
-              <Route exact path={'/add-collection'} component={AddCollection} />
-              <Route exact path={'/collections'} component={Welcome} />
-              <Route path={'/collections/:id'} component={CollectionView} />
-              <Route path={'/films/:id'} component={FilmDetail} />
-              <Route
-                exact
-                path={'/films'}
-                render={props => (
-                  <AllFilms {...props} films={this.state.films} />
+          <HashRouter basename="/">
+            <Header />
+            <main className="App-main fadeIn">
+              <Switch>
+                {this.state.loggedIn ? (
+                  <Route
+                    exact
+                    path={'/'}
+                    render={props => (
+                      <HomePage {...props} films={this.state.films} />
+                    )}
+                  />
+                ) : (
+                  <Route exact path={'/'} component={Welcome} />
                 )}
-              />
-            </Switch>
-            </HashRouter>
-          </main>
+                <Route exact path={'/login'} component={Login} />
+                <Route exact path={'/register'} component={Register} />
+                <Route exact path={'/add-title'} component={AddTitle} />
+                <Route
+                  exact
+                  path={'/add-collection'}
+                  component={AddCollection}
+                />
+                <Route exact path={'/collections'} component={Welcome} />
+                <Route path={'/collections/:id'} component={CollectionView} />
+                <Route path={'/films/:id'} component={FilmDetail} />
+                <Route
+                  exact
+                  path={'/films'}
+                  render={props => (
+                    <AllFilms {...props} films={this.state.films} />
+                  )}
+                />
+              </Switch>
+            </main>
+          </HashRouter>
         </div>
       </ApiContext.Provider>
     );
