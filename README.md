@@ -8,9 +8,9 @@ Try it out! - https://video-store.now.sh/
 
 ## Add Title
 
-![Add Title](./src/images/screenshots/addtitle.png)
-
 Users can add any number of films along with optional additional information for each title:
+
+![Add Title](./src/images/screenshots/addtitle.png)
 
 **Title** - Title of the film.   
 **Collections** - Which collection(s) the film belongs in. Multiple collections can be selected.    
