@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FilmLink from '../FilmLink/FilmLink';
-import { findCollection } from '../../services/film-helpers';
 import ApiContext from '../../ApiContext';
 import config from '../../config';
 import './CollectionView.scss';
@@ -38,8 +37,8 @@ export class CollectionView extends Component {
       collection => {
         return collection.json().then(collection => {
           this.setState({
-            collection_title: collection.collection_title,
-            collection_notes: collection.collection_notes,
+            collection_title: collection.title,
+            collection_notes: collection.notes,
             collection_films: collection.collection_films
               ? [...collection.collection_films]
               : [],
@@ -47,7 +46,7 @@ export class CollectionView extends Component {
           });
         });
       }
-    );
+    )
   }
 
   handleClickDelete = e => {
@@ -73,10 +72,6 @@ export class CollectionView extends Component {
       return <></>;
     }
 
-    const { collections = [] } = this.context;
-    let { id } = this.props.match.params;
-
-    const collection = findCollection(collections, id) || { content: '' };
     const alphabetizedCollectionFilms = this.state.collection_films.sort(
       function(a, b) {
         if (a.title.toLowerCase() < b.title.toLowerCase()) {
@@ -89,15 +84,21 @@ export class CollectionView extends Component {
       }
     );
 
-    let numberFilms =
-      this.state.collection_films.length === 1
-        ? `There is 1 film in this collection.`
-        : `There are ${this.state.collection_films.length} films in this collection.`;
+    const { collection_films } = this.state;
+    let numberFilms;
+
+    if (collection_films.length === 1 && collection_films[0].title) {
+      numberFilms = 'There is 1 film in this collection.'
+    } else if (collection_films.length === 1 && !collection_films[0].title) {
+      numberFilms = 'There are no films in this collection.'
+    } else {
+      numberFilms = `There are ${collection_films.length} films in this collection.`
+    }
 
     return (
       <section className="fadeIn">
-        <h2>{collection.title}</h2>
-        <p className="collection-notes">{collection.notes}</p>
+        <h2>{this.state.collection_title}</h2>
+        <p className="collection-notes">{this.state.collection_notes}</p>
         <Link to="/add-title" className="new-title link add-view">
           Add Title
         </Link>

@@ -20,6 +20,8 @@ export class CollectionList extends Component {
       return 0;
     });
 
+    
+
     return (
       <>
         <h2 className="collections-header">Your Collections</h2>
