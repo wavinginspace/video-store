@@ -38,6 +38,8 @@ export class CollectionView extends Component {
       collection => {
         return collection.json().then(collection => {
           this.setState({
+            collection_title: collection.collection_title,
+            collection_notes: collection.collection_notes,
             collection_films: collection.collection_films
               ? [...collection.collection_films]
               : [],
