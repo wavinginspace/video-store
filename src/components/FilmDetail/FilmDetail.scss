@@ -34,6 +34,11 @@
   color: blue;
 }
 
+.center-delete {
+  display: flex;
+  justify-content: center;
+}
+
 .film-delete-button {
   border: none;
   transition: color 0.5s;

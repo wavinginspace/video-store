@@ -131,12 +131,14 @@ class FilmDetail extends React.Component {
           <p>
             <span className="label">Date Added:</span> {film.date_added}
           </p>
-          <button
-            className="film-delete-button"
-            onClick={this.handleClickDelete}
-            type="button">
-            Delete Film
-          </button>
+          <div className="center-delete">
+            <button
+              className="film-delete-button"
+              onClick={this.handleClickDelete}
+              type="button">
+              Delete Film
+            </button>
+          </div>
         </div>
 
         <Link className="back-button" to="/">
