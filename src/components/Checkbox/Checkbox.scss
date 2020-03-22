@@ -1,0 +1,24 @@
+.checkbox-label {
+  font-weight: 400;
+  font-size: .9rem;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 .5em 0 0;
+  text-indent: -1rem;
+}
+
+.checkbox-input {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: -3px;
+  *overflow: hidden;
+}
+
+.label-wrapper {
+  width: 100%;
+  text-align: center;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../../config';
 import ApiContext from '../../ApiContext';
+import Checkbox from '../Checkbox/Checkbox';
 import './AddTitle.scss';
 
 class AddTitle extends Component {
@@ -26,7 +27,8 @@ class AddTitle extends Component {
       tags: '',
       notes: '',
       memorable_scenes: '',
-      fieldTouched: false
+      fieldTouched: false,
+      checkedItems: new Map()
     };
   }
 
@@ -40,36 +42,49 @@ class AddTitle extends Component {
     });
   }
 
-  generateCollectionsOptions() {
+  handleChange = event => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    console.log(value);
+    const name = target.name;
+    console.log(name);
+
+    this.setState(prevState => ({
+      checkedItems: prevState.checkedItems.set(name, value)
+    }));
+
+    let selected_collections = this.state.selected_collections;
+    let check = event.target.checked;
+    let checked_collection = event.target.id;
+
+    if (check) {
+      this.setState({
+        selected_collections: [...this.state.selected_collections, checked_collection]
+      });
+    } else {
+      var index = selected_collections.indexOf(checked_collection);
+      if (index > -1) {
+        selected_collections.splice(index, 1);
+        this.setState({
+          selected_collections: selected_collections
+        });
+      }
+    }
+  };
+
+  generateCollectionsCheckboxes() {
     const { collections = [] } = this.context;
     return collections.map(collection => {
       return (
-        <option
+        <Checkbox
           key={collection.id}
           id={collection.id}
-          className="collection-option"
-          value={collection.id}>
-          {collection.title}
-        </option>
+          type="checkbox"
+          name={collection.title}
+          checked={this.state.checkedItems.get(collection.name)}
+          onChange={this.handleChange}
+        />
       );
-    });
-  }
-
-  updateSelectedCollection(select) {
-    let result = [];
-    let options = select && select.options;
-    let opt;
-
-    for (var i = 0, iLen = options.length; i < iLen; i++) {
-      opt = options[i];
-
-      if (opt.selected) {
-        result.push(opt.value || opt.text);
-      }
-    }
-
-    this.setState({
-      selected_collections: [...result]
     });
   }
 
@@ -154,20 +169,8 @@ class AddTitle extends Component {
           <label className="collections-label" htmlFor="collections">
             Collections:
           </label>
-          <p className="collections-note">
-            * hold cmd to select multiple collections
-          </p>
-          <select
-            name="collections"
-            id="collections"
-            multiple
-            size="4"
-            value={this.state.selected_collections}
-            onChange={e => {
-              this.updateSelectedCollection(e.target);
-            }}>
-            {this.generateCollectionsOptions()}
-          </select>
+
+          {this.generateCollectionsCheckboxes()}
 
           <label htmlFor="director">Director:</label>
           <input
