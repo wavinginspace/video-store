@@ -75,5 +75,5 @@ Zeit, Heroku
 
 *Paul Baisley 2020*
 
-
+*VCR Graphic by Nikita Golubev*
 
