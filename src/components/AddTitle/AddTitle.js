@@ -42,31 +42,29 @@ class AddTitle extends Component {
     });
   }
 
-  handleChange = event => {
-    const target = event.target;
+  updateCollections = event => {
+    const { target } = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    console.log(value);
     const name = target.name;
-    console.log(name);
 
     this.setState(prevState => ({
       checkedItems: prevState.checkedItems.set(name, value)
     }));
 
     let selected_collections = this.state.selected_collections;
-    let check = event.target.checked;
-    let checked_collection = event.target.id;
+    let check = target.checked;
+    let checked_collection = target.id;
 
     if (check) {
       this.setState({
-        selected_collections: [...this.state.selected_collections, checked_collection]
+        selected_collections: [...selected_collections, checked_collection]
       });
     } else {
       var index = selected_collections.indexOf(checked_collection);
       if (index > -1) {
         selected_collections.splice(index, 1);
         this.setState({
-          selected_collections: selected_collections
+          selected_collections
         });
       }
     }
@@ -74,7 +72,17 @@ class AddTitle extends Component {
 
   generateCollectionsCheckboxes() {
     const { collections = [] } = this.context;
-    return collections.map(collection => {
+    const alphabetizedCollections = collections.sort((a, b) => {
+      if (a.title.toLowerCase() < b.title.toLowerCase()) {
+        return -1;
+      }
+      if (a.title.toLowerCase() > b.title.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+
+    return alphabetizedCollections.map(collection => {
       return (
         <Checkbox
           key={collection.id}
@@ -82,7 +90,7 @@ class AddTitle extends Component {
           type="checkbox"
           name={collection.title}
           checked={this.state.checkedItems.get(collection.name)}
-          onChange={this.handleChange}
+          onChange={this.updateCollections}
         />
       );
     });
@@ -170,7 +178,9 @@ class AddTitle extends Component {
             Collections:
           </label>
 
-          {this.generateCollectionsCheckboxes()}
+          <div className="collections-list">
+            {this.generateCollectionsCheckboxes()}
+          </div>
 
           <label htmlFor="director">Director:</label>
           <input

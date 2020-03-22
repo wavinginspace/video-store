@@ -2,23 +2,27 @@
   font-weight: 400;
   font-size: .9rem;
   display: inline-block;
-  margin: 0 auto;
+  margin: 0 auto .1rem;
   padding: 0 .5em 0 0;
-  text-indent: -1rem;
+  // text-indent: -1rem;
 }
 
 .checkbox-input {
-  width: 13px;
-  height: 13px;
+  width: 1rem;
+  height: 1rem;
   padding: 0;
-  margin: 0;
+  margin: 0 0 .1rem;
   vertical-align: bottom;
   position: relative;
   top: -3px;
-  *overflow: hidden;
 }
 
 .label-wrapper {
   width: 100%;
   text-align: center;
+  position: relative;
+}
+
+.collections-list {
+  margin-bottom: 1rem;
 }
