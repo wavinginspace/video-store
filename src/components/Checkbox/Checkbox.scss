@@ -1,9 +1,12 @@
+@import '../../styles/_breakpoints.scss';
+@import '../../styles/_variables.scss';
+
 .checkbox-label {
   font-weight: 400;
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: inline-block;
-  margin: 0 auto .1rem;
-  padding: 0 .5em 0 0;
+  margin: 0 auto 0.1rem;
+  padding: 0 0.5em 0 0;
   // text-indent: -1rem;
 }
 
@@ -11,10 +14,15 @@
   width: 1rem;
   height: 1rem;
   padding: 0;
-  margin: 0 0 .1rem;
+  margin: 0 0 0.1rem;
   vertical-align: bottom;
   position: relative;
-  top: -3px;
+}
+
+@include mobileLandscape {
+  .checkbox-input {
+    top: -3px;
+  }
 }
 
 .label-wrapper {

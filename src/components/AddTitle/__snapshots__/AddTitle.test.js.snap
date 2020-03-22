@@ -27,18 +27,8 @@ exports[`renders the UI as expected 1`] = `
     >
       Collections:
     </label>
-    <p
-      className="collections-note"
-    >
-      * hold cmd to select multiple collections
-    </p>
-    <select
-      id="collections"
-      multiple={true}
-      name="collections"
-      onChange={[Function]}
-      size="4"
-      value={Array []}
+    <div
+      className="collections-list"
     />
     <label
       htmlFor="director"
