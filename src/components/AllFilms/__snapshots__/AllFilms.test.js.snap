@@ -1,31 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the UI as expected 1`] = `
-Array [
+<section
+  className="AllFilms fadeIn"
+>
   <p
     className="filmnumber fadeIn"
   >
     There are 0 films in your store.
-  </p>,
-  <section
-    className="AllFilms fadeIn"
+  </p>
+  <div
+    className="box"
   >
     <div
-      className="box"
+      className="filter-checkboxes"
     >
-      <ul />
-    </div>
-    <a
-      className="back-button"
-      href="/"
-      onClick={[Function]}
-    >
-      <p
-        className="back-button-p"
+      <div
+        className="label-wrapper"
       >
-        Back
-      </p>
-    </a>
-  </section>,
-]
+        <label
+          className="checkbox-label"
+          htmlFor="selling: "
+        >
+          selling: 
+        </label>
+        <input
+          checked={false}
+          className="checkbox-input"
+          name="selling: "
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </div>
+    </div>
+    <ul />
+  </div>
+  <a
+    className="back-button"
+    href="/"
+    onClick={[Function]}
+  >
+    <p
+      className="back-button-p"
+    >
+      Back
+    </p>
+  </a>
+</section>
 `;
