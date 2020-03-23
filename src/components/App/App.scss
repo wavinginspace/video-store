@@ -54,6 +54,7 @@ button {
   width: 80%;
   margin: 0 auto 1rem;
   padding: 0.5rem;
+  position: relative;
 }
 
 @include tabletPortrait {
