@@ -40,6 +40,8 @@ export class App extends Component {
         })
         .catch(error => {});
     });
+
+    
   }
 
   handleAddFilm = film => {
@@ -79,7 +81,7 @@ export class App extends Component {
     // give fetch time to populate context before returning components
 
     if (this.state.loading) {
-      return <></>;
+      return <div className="vcrload"></div>; // decide whether or not to use loading image
     }
 
     return (
