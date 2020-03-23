@@ -43,8 +43,6 @@ export class AllFilms extends Component {
         ? `There is 1 film in your store.`
         : `There are ${this.context.films.length} films in your store.`;
 
-    // let saleAmount = this.state.selling_checked ? <span className="sale-amount"></span>
-
     return (
       <section className="AllFilms fadeIn">
         <p className="filmnumber fadeIn">{numberFilms}</p>
