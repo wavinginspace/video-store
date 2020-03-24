@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Register from './Register';
+import Register from './Register.test';
 import renderer from 'react-test-renderer';
 
 it('renders without crashing', () => {
