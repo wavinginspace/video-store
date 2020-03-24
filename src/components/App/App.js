@@ -40,8 +40,6 @@ export class App extends Component {
         })
         .catch(error => {});
     });
-
-    
   }
 
   handleAddFilm = film => {

@@ -11,14 +11,14 @@ class FilmDetail extends React.Component {
     this.goBack = this.goBack.bind(this);
   }
 
+  goBack() {
+    this.props.history.goBack();
+  }
+
   state = {
     collections: '',
     loading: true
   };
-
-  goBack() {
-    this.props.history.goBack();
-  }
 
   static defaultProps = {
     match: {

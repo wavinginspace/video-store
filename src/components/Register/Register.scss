@@ -5,13 +5,27 @@
   margin: 0 auto;
 }
 
-.register-form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
 h2 {
   text-align: center;
 }
 
+label,
+input {
+  margin: 1rem auto;
+  text-align: left;
+}
+
+input, .Input {
+  width: 150px;
+  height: 1.2rem;
+}
+
+.register-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password2 {
+  margin-bottom: 1rem;
+}
