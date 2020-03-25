@@ -19,7 +19,14 @@ export class App extends Component {
     loggedIn: false,
     films: [],
     collections: [],
-    loading: true
+    loading: true,
+    user: ''
+  };
+
+  static defaultProps = {
+    history: {
+      push: () => {}
+    }
   };
 
   componentDidMount() {
@@ -66,14 +73,26 @@ export class App extends Component {
     });
   };
 
+  handleRegistrationSuccess = user => {
+    console.log('registered!???', user);
+    this.setState({
+      loggedIn: true,
+      user: user
+    });
+    console.log(this.state);
+  };
+
   render() {
     const value = {
       films: this.state.films,
       collections: this.state.collections,
+      loggedIn: this.state.loggedIn,
+      user: this.state.user,
       deleteFilm: this.handleDeleteFilm,
       deleteCollection: this.handleDeleteCollection,
       addCollection: this.handleAddCollection,
-      addFilm: this.handleAddFilm
+      addFilm: this.handleAddFilm,
+      handleRegistrationSuccess: this.handleRegistrationSuccess
     };
 
     // give fetch time to populate context before returning components

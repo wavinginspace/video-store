@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Input, Required } from '../Utils/Utils';
 import { Link } from 'react-router-dom';
+import ApiContext from '../../ApiContext';
 import AuthApiService from '../../services/auth-api-service';
 import './Register.scss';
 
@@ -15,8 +16,12 @@ class Register extends Component {
   }
 
   static defaultProps = {
-    onRegistrationSuccess: () => {}
+    history: {
+      push: () => {}
+    }
   };
+
+  static contextType = ApiContext;
 
   state = { error: null };
 
@@ -30,9 +35,11 @@ class Register extends Component {
       password: password.value
     })
       .then(user => {
+        
         user_name.value = '';
         password.value = '';
-        this.props.onRegistrationSuccess();
+        this.context.handleRegistrationSuccess(user.user_name);
+        this.props.history.goBack();
       })
       .catch(res => {
         this.setState({ error: res.error });
@@ -68,7 +75,7 @@ class Register extends Component {
               required
               id="RegistrationForm__password"></Input>
           </div>
-          <div className="password2 register-input">
+          {/* <div className="password2 register-input">
             <label htmlFor="RegistrationForm__password2">
               Re-enter Password <Required />
             </label>
@@ -78,7 +85,7 @@ class Register extends Component {
               autoComplete="off"
               required
               id="RegistrationForm__password2"></Input>
-          </div>
+          </div> */}
 
           <Button className="submit-button" type="submit">
             Register
