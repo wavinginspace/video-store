@@ -2,9 +2,9 @@
 
 Video Store is an app for managing your personal film collection. Users can add film titles and collections, with any number of films belonging to any number of collections. Built with film collectors, fans, archivists and sellers/traders in mind.
 
-![Home Page](./src/images/screenshots/home.png)
-
+<p align="center">
 <img src="./src/images/screenshots/home.png" align="center" alt="Home Page">  
+</p>
 
 
 Try it out! - https://video-store.now.sh/
@@ -13,7 +13,6 @@ Try it out! - https://video-store.now.sh/
 
 Users can add any number of films along with optional additional information for each title.
 
-![Add Title](./src/images/screenshots/addtitle.png)  
 
 <img src="./src/images/screenshots/addtitle.png" align="center" alt="Add Title">  
 
