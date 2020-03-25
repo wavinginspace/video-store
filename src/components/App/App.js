@@ -10,23 +10,26 @@ import AddCollection from '../AddCollection/AddCollection';
 import CollectionView from '../CollectionView/CollectionView';
 import FilmDetail from '../FilmDetail/FilmDetail';
 import AllFilms from '../AllFilms/AllFilms';
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
+import PrivateRoute from '../Utils/PrivateRoute';
 import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 import ApiContext from '../../ApiContext';
 
 export class App extends Component {
+  static defaultProps = {
+    location: {},
+    history: {
+      push: () => {}
+    }
+  };
+
   state = {
     loggedIn: false,
     films: [],
     collections: [],
     loading: true,
     user: ''
-  };
-
-  static defaultProps = {
-    history: {
-      push: () => {}
-    }
   };
 
   componentDidMount() {
@@ -89,12 +92,19 @@ export class App extends Component {
     console.log(this.state);
   };
 
+  handleLoginSuccess = user => {
+    this.setState({ loggedIn: true, user: user });
+    const { location, history } = this.props
+    const destination = (location.state || {}).from || '/'
+    history.push(destination)
+  };
+
   handleLogOut = () => {
     this.setState({
       loggedIn: false,
       user: ''
-    })
-  }
+    });
+  };
 
   render() {
     const value = {
@@ -134,7 +144,13 @@ export class App extends Component {
               ) : (
                 <Route exact path={'/'} component={Welcome} />
               )}
-              <Route exact path={'/login'} component={Login} />
+              <Route
+                exact
+                path={'/login'}
+                render={props => (
+                  <Login {...props} onLoginSuccess={this.handleLoginSuccess} />
+                )}
+              />
               <Route exact path={'/register'} component={Register} />
               <Route exact path={'/add-title'} component={AddTitle} />
               <Route exact path={'/add-collection'} component={AddCollection} />

@@ -3,7 +3,7 @@
 
 .fadeIn {
   animation-name: fadeIn;
-  animation-duration: .2s;
+  animation-duration: 0.2s;
   animation-fill-mode: forwards;
 }
 
@@ -35,7 +35,8 @@ input {
   text-align: left;
 }
 
-input, .Input {
+input,
+.Input {
   width: 150px;
   height: 1.2rem;
 }
@@ -52,4 +53,8 @@ input, .Input {
 
 #RegistrationForm__password {
   margin-bottom: 2rem;
+}
+
+.red {
+  color: red;
 }
