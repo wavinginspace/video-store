@@ -4,6 +4,9 @@ Video Store is an app for managing your personal film collection. Users can add 
 
 ![Home Page](./src/images/screenshots/home.png)
 
+<img src="./src/images/screenshots/home.png" align="center" alt="Home Page">  
+
+
 Try it out! - https://video-store.now.sh/
 
 ## Add Title
@@ -12,7 +15,7 @@ Users can add any number of films along with optional additional information for
 
 ![Add Title](./src/images/screenshots/addtitle.png)  
 
-    
+<img src="./src/images/screenshots/addtitle.png" align="center" alt="Add Title">  
 
 
 **Title** - Title of the film.   

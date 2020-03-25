@@ -26,21 +26,22 @@ export class Header extends Component {
 
     let logStatus = user == 'Guest' ? 'Login/Register' : 'Logout';
 
-
-
     if (this.state.loading) {
       return <></>;
     }
 
     return (
       <div className="Header">
-        {loggedIn ? (
-          <Link className="log-button" to="/" onClick={handleLogOut}>
-            <p className="log-button">{logStatus}</p>
-          </Link>
-        ) : (
-          ''
-        )}
+      <div className="links">
+        <a className="about-link" href="https://github.com/wavinginspace/video-store" target="_blank" rel="noopener noreferrer">About</a>
+          {loggedIn ? (
+            <Link className="log-button" to="/" onClick={handleLogOut}>
+              <p className="log-button">{logStatus}</p>
+            </Link>
+          ) : (
+            ''
+          )}
+      </div>
         <header>
           <Link to="/" className="homelink">
             <h1>Video Store</h1>

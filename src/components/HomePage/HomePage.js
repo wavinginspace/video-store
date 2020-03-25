@@ -7,6 +7,14 @@ import './HomePage.scss';
 export class HomePage extends Component {
   static contextType = ApiContext;
 
+  state = {
+    loading: true
+  }
+
+  componentDidMount() {
+    this.setState({loading: false})
+  }
+
   render() {
     const { handleLogOut } = this.context;
     let numberFilms =
@@ -19,6 +27,10 @@ export class HomePage extends Component {
         ? `1 collection in your store`
         : `${this.context.collections.length} collections in your store.`;
 
+        if (this.state.loading) {
+          return <></>;
+        }
+        
     return (
       <div className="HomePage fadeIn">
         <Link to="/films">
