@@ -50,7 +50,7 @@ class Register extends Component {
     const { error } = this.state;
     return (
       <>
-        <form className="RegistrationForm box" onSubmit={this.handleSubmit}>
+        <form className="RegistrationForm box fadeIn" onSubmit={this.handleSubmit}>
           <div role="alert">{error && <p className="red">{error}</p>}</div>
 
           <div className="user_name register-input">
@@ -87,7 +87,7 @@ class Register extends Component {
               id="RegistrationForm__password2"></Input>
           </div> */}
 
-          <Button className="submit-button" type="submit">
+          <Button className=" register-button submit-button" type="submit">
             Register
           </Button>
         </form>

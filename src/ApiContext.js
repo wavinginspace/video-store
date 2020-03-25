@@ -9,5 +9,7 @@ export default React.createContext({
   deleteFilm: () => {},
   addCollection: () => {},
   deleteCollection: () => {},
-  handleRegistrationSuccess: () => {}
+  handleRegistrationSuccess: () => {},
+  handleDemoLink: () => {},
+  handleLogOut: () => {}
 })

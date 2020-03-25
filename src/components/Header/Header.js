@@ -17,7 +17,10 @@ export class Header extends Component {
   static contextType = ApiContext;
 
   render() {
-    const { loggedIn, user } = this.context;
+    const { loggedIn, user, handleLogOut } = this.context;
+
+    let welcomeMessage = loggedIn && user !== 'Guest' ? `Welcome to Video Store, ${user}!` :
+    `Welcome to Video Store! Your personal film collection assistant.`
 
     if (this.state.loading) {
       return <></>;
@@ -26,13 +29,16 @@ export class Header extends Component {
     return (
       <div className="Header">
         <header>
+        
           <Link to="/" className="homelink">
             <h1>Video Store</h1>
           </Link>
-          <p>
-            Welcome to Video Store{loggedIn ? `, ${user}` : ''}! Your personal
-            film collection assistant.
+          <p className="welcome-message">
+            {welcomeMessage}
           </p>
+          <Link to="/films" className="all-films-link">
+          <p className="all-films-link-p">View all films</p>
+        </Link>
         </header>
       </div>
     );

@@ -16,7 +16,7 @@ import ApiContext from '../../ApiContext';
 
 export class App extends Component {
   state = {
-    loggedIn: false,
+    loggedIn: true,
     films: [],
     collections: [],
     loading: true,
@@ -73,6 +73,13 @@ export class App extends Component {
     });
   };
 
+  handleDemoLink = () => {
+    this.setState({
+      loggedIn: true,
+      user: 'Guest'
+    });
+  };
+
   handleRegistrationSuccess = user => {
     console.log('registered!???', user);
     this.setState({
@@ -81,6 +88,13 @@ export class App extends Component {
     });
     console.log(this.state);
   };
+
+  handleLogOut = () => {
+    this.setState({
+      loggedIn: false,
+      user: ''
+    })
+  }
 
   render() {
     const value = {
@@ -92,7 +106,9 @@ export class App extends Component {
       deleteCollection: this.handleDeleteCollection,
       addCollection: this.handleAddCollection,
       addFilm: this.handleAddFilm,
-      handleRegistrationSuccess: this.handleRegistrationSuccess
+      handleRegistrationSuccess: this.handleRegistrationSuccess,
+      handleDemoLink: this.handleDemoLink,
+      handleLogOut: this.handleLogOut
     };
 
     // give fetch time to populate context before returning components

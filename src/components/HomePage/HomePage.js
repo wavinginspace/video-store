@@ -8,6 +8,7 @@ export class HomePage extends Component {
   static contextType = ApiContext;
 
   render() {
+    const { handleLogOut } = this.context;
     let numberFilms =
       this.context.films.length === 1
         ? `There is 1 film and `
@@ -32,6 +33,7 @@ export class HomePage extends Component {
           {numberFilms}
           {numberCollections}
         </p>
+
         <div className="new-links">
           <Link to="/add-title" className="new-title link">
             Add Title
@@ -42,8 +44,9 @@ export class HomePage extends Component {
         </div>
 
         <CollectionList collections={this.context.collections} />
-        <Link to="/films" className="all-films-link">
-          <p className="all-films-link-p">View all films</p>
+
+        <Link className="welcome-button" to="/" onClick={handleLogOut}>
+          <p className="welcome-button">Login/Register</p>
         </Link>
       </div>
     );

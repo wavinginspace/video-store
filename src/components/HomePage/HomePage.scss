@@ -83,19 +83,6 @@
   }
 }
 
-.all-films-link {
-  margin: 0 auto 2rem;
-  text-align: center;
-  text-decoration: none;
-  color: var(--main);
-}
-
-.all-films-link-p:hover,
-.all-films-link-p:active {
-  color: var(--link);
-  font-weight: 500;
-}
-
 .fadeIn {
   animation-name: fadeIn;
   animation-duration: 0.2s;

@@ -23,8 +23,9 @@ export class CollectionList extends Component {
     return (
       <>
         <h2 className="collections-header">Your Collections</h2>
-        <section className="CollectionList">
-          <ul className="collection-list box" aria-live="polite">
+        
+        <section className="CollectionList box">
+          <ul className="collection-list " aria-live="polite">
             {alphabetizedCollections.map(collection => (
               <CollectionLink key={collection.id} collection={collection} />
             ))}
