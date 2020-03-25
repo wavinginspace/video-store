@@ -5,6 +5,11 @@
 
 .Header {
   padding: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  // display: flex;
+  // justify-content: center;
 }
 
 h1,
@@ -18,7 +23,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 2.5px;
   color: var(--main);
-  margin-bottom: 1rem;
+  margin: 3rem 0 1rem;
   transition: color 0.5s ease;
 }
 
@@ -47,4 +52,27 @@ h1:hover {
 .all-films-link-p:active {
   color: var(--link);
   font-weight: 500;
+}
+
+.log-button {
+  position: absolute;
+  right: 0;
+  top: 1rem;
+}
+
+.log-button:hover {
+  font-weight: 500;
+  color: blue;
+}
+
+@include tabletPortrait {
+  .Header {
+    width: 65%;
+  }
+}
+
+@include tabletLandscape {
+  .box {
+    width: 50%;
+  }
 }

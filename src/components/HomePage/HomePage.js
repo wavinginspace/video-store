@@ -44,9 +44,8 @@ export class HomePage extends Component {
         </div>
 
         <CollectionList collections={this.context.collections} />
-
-        <Link className="welcome-button" to="/" onClick={handleLogOut}>
-          <p className="welcome-button">Login/Register</p>
+        <Link to="/films" className="all-films-link">
+          <p className="all-films-link-p">View all films</p>
         </Link>
       </div>
     );

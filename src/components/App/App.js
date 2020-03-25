@@ -16,7 +16,7 @@ import ApiContext from '../../ApiContext';
 
 export class App extends Component {
   state = {
-    loggedIn: true,
+    loggedIn: false,
     films: [],
     collections: [],
     loading: true,

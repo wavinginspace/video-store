@@ -5,12 +5,28 @@
   margin: 0 auto;
 }
 
-.login-form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+// .login-form {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+// }
 
 h2 {
   text-align: center;
 }
+
+input, .Input {
+  width: 150px;
+  height: 1.2rem;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#Login__password {
+  margin-bottom: 2rem;
+}
+

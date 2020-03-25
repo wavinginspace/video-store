@@ -35,7 +35,6 @@ class Register extends Component {
       password: password.value
     })
       .then(user => {
-        
         user_name.value = '';
         password.value = '';
         this.context.handleRegistrationSuccess(user.user_name);

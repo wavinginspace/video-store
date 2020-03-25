@@ -19,8 +19,14 @@ export class Header extends Component {
   render() {
     const { loggedIn, user, handleLogOut } = this.context;
 
-    let welcomeMessage = loggedIn && user !== 'Guest' ? `Welcome to Video Store, ${user}!` :
-    `Welcome to Video Store! Your personal film collection assistant.`
+    let welcomeMessage =
+      loggedIn && user !== 'Guest'
+        ? `Welcome to Video Store, ${user}!`
+        : `Welcome to Video Store! Your personal film collection assistant.`;
+
+    let logStatus = user == 'Guest' ? 'Login/Register' : 'Logout';
+
+
 
     if (this.state.loading) {
       return <></>;
@@ -28,17 +34,18 @@ export class Header extends Component {
 
     return (
       <div className="Header">
+        {loggedIn ? (
+          <Link className="log-button" to="/" onClick={handleLogOut}>
+            <p className="log-button">{logStatus}</p>
+          </Link>
+        ) : (
+          ''
+        )}
         <header>
-        
           <Link to="/" className="homelink">
             <h1>Video Store</h1>
           </Link>
-          <p className="welcome-message">
-            {welcomeMessage}
-          </p>
-          <Link to="/films" className="all-films-link">
-          <p className="all-films-link-p">View all films</p>
-        </Link>
+          <p className="welcome-message">{welcomeMessage}</p>
         </header>
       </div>
     );
