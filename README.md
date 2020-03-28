@@ -86,6 +86,8 @@ Zeit, Heroku
 
 ---
 
+*API repo - https://github.com/wavinginspace/video-store-server*
+
 _Paul Baisley 2020_
 
 _VCR Graphic by Nikita Golubev_
