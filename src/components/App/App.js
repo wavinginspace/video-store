@@ -37,6 +37,8 @@ export class App extends Component {
       loading: true
     });
 
+    // * add user_id logic to initial fetch call
+
     Promise.all([
       fetch(`${config.API_ENDPOINT}/api/films`),
       fetch(`${config.API_ENDPOINT}/api/collections`)
