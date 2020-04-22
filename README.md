@@ -8,6 +8,8 @@ Video Store is an app for managing your personal film collection. Users can add 
 
 Try it out! - https://video-store.now.sh/
 
+API repo - https://github.com/wavinginspace/video-store-server
+
 ## Add Title
 
 Users can add any number of films along with optional additional information for each title.
